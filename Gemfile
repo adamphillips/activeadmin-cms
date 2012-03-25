@@ -17,6 +17,7 @@ end
 
 
 gem "activeadmin"
+gem "haml"
 
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
@@ -29,6 +30,17 @@ gem "jquery-rails"
 # To use debugger
 gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem 'carrierwave'
+gem 'fog'
+gem 'mini_magick' 
+
+gem 'acts_as_markup', :git => 'git@github.com:adamphillips/acts_as_markup.git'
+
+gem 'delayed_job_active_record'
+gem 'carrierwave_backgrounder'
+gem 'daemons'
+
 group :development do
+  gem 'factory_girl_rails'
   gem 'generator_spec', :path => '/Users/aphillips/Projects/Development/OpenSource/gems/generator_spec'
 end

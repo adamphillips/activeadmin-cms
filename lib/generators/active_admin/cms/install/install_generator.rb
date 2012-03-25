@@ -21,13 +21,17 @@ module ActiveAdmin
         #template 'page.rb.erb', "app/models/#{file_path}.rb"
       #end
 
-      #def create_migrations
-        #Dir["#{self.class.source_root}/migrations/*.rb"].sort.each do |filepath|
-          #name = File.basename(filepath)
-          #migration_template "migrations/#{name}", "db/migrate/#{name.gsub(/^\d+_/,'')}"
-          #sleep 1
-        #end
-      #end
+      def create_initializer
+        template 'initializer.rb', "config/initializers/active_admin-cms.rb"
+      end
+
+      def create_migrations
+        Dir["#{self.class.source_root}/migrations/*.rb"].sort.each do |filepath|
+          name = File.basename(filepath)
+          migration_template "migrations/#{name}", "db/migrate/#{name.gsub(/^\d+_/,'')}"
+          sleep 1
+        end
+      end
 
     end
   end

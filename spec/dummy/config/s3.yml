@@ -1,0 +1,25 @@
+production:
+  provider: AWS
+  access_key_id: AKIAIQ3XZ7WQBPMW3Q6A
+  secret_access_key: mX0bbuH9MeIFjBwGSZa5VLD6Ed1mS7b48sGPm
+  region: eu-west-1
+  bucket: dev.aacms
+staging:
+  provider: AWS
+  access_key_id: AKIAIQ3XZ7WQBPMW3Q6A
+  secret_access_key: mX0bbuH9MeIFjBwGSZa5VLD6Ed1mS7b48sGPm
+  region: eu-west-1
+  bucket: dev.aacms
+development:
+  provider: AWS
+  access_key_id: AKIAIQ3XZ7WQBPMW3Q6A
+  secret_access_key: mX0bbuH9MeIFjBwGSZa5VLD6Ed1mS7b48sGPm
+  region: eu-west-1
+  bucket: dev.aacms
+test:
+  provider: AWS
+  access_key_id: AKIAIQ3XZ7WQBPMW3Q6A
+  secret_access_key: mX0bbuH9MeIFjBwGSZa5VLD6Ed1mS7b48sGPm
+  region: eu-west-1
+  bucket: dev.aacms
+

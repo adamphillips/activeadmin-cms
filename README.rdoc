@@ -6,4 +6,6 @@ Run active admin Install
 
 rails g active_admin:install
 
+Setup FOG variables in config/fog.yml
+
 This project rocks and uses MIT-LICENSE.

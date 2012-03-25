@@ -13,31 +13,23 @@ describe ActiveAdmin::Cms::InstallGenerator do
 
   specify do
     destination_root.should have_structure {
-      no_file "test.rb"
-      #directory "app" do
-        #directory "admin" do
-          #file "pages.rb" do
-            #contains 'ActiveAdmin.register Page'
-           #end
-        #end
-        #directory "models" do
-          #file "page.rb" do
-            #contains "class Page < ActiveAdmin::Cms::Page"
-          #end
-        #end
-        #directory "views" do
-        #end
-      #end
-      #directory "db" do
-        #directory "migrate" do
-          #migration "create_pages" do
-            #contains "class CreatePages < ActiveRecord::Migration"
-          #end
-        #end
-      #end
+      directory "config" do
+        directory "initializers" do
+          file "active_admin-cms.rb" do
+            contains "module ActiveAdmin::Cms"
+          end
+        end
+      end
+      directory "db" do
+        directory "migrate" do
+          migration "install_aacms" do
+            contains "class InstallAacms < ActiveRecord::Migration"
+            contains "create_table :content"
+            contains "create_table :recipes"
+          end
+        end
+      end
     }
   end
 
 end
-
-

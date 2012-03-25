@@ -18,6 +18,17 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.2"
   s.add_dependency "activeadmin"
 
+  s.add_dependency "haml"
+
+  s.add_dependency "carrierwave"
+  s.add_dependency "fog"
+  s.add_dependency "mini_magick"
+  s.add_dependency "acts_as_markup"
+  s.add_dependency "delayed_job_active_record"
+  s.add_dependency "carrierwave_backgrounder"
+  s.add_dependency "daemons"
+  
+  
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "rspec"
   s.add_development_dependency "rspec-rails"
