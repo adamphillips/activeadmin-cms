@@ -5,6 +5,19 @@ source "http://rubygems.org"
 # development dependencies will be added by default to the :development group.
 gemspec
 
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  # gem 'therubyracer'
+
+  gem 'uglifier', '>= 1.0.3'
+end
+
+
+gem "activeadmin"
+
 # jquery-rails is used by the dummy application
 gem "jquery-rails"
 
@@ -14,4 +27,8 @@ gem "jquery-rails"
 # your gem to rubygems.org.
 
 # To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'ruby-debug19', :require => 'ruby-debug'
+
+group :development do
+  gem 'generator_spec', :path => '/Users/aphillips/Projects/Development/OpenSource/gems/generator_spec'
+end

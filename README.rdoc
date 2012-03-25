@@ -1,3 +1,9 @@
 = ActiveadminCms
 
+== To Install
+
+Run active admin Install
+
+rails g active_admin:install
+
 This project rocks and uses MIT-LICENSE.

@@ -5,6 +5,13 @@ PATH
       activeadmin
       rails (~> 3.2.2)
 
+PATH
+  remote: /Users/aphillips/Projects/Development/OpenSource/gems/generator_spec
+  specs:
+    generator_spec (0.8.5)
+      activerecord (>= 3.0, < 4.0)
+      railties (>= 3.0, < 4.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -46,6 +53,7 @@ GEM
     activesupport (3.2.2)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    archive-tar-minitar (0.5.2)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     bourbon (1.4.0)
@@ -60,6 +68,14 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.1)
       ffi (~> 1.0.6)
+    coffee-rails (3.2.2)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.2.0)
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.2.0)
+    columnize (0.3.6)
     console_update (0.1.6)
     database_cleaner (0.7.2)
     devise (2.0.4)
@@ -73,6 +89,8 @@ GEM
       rspec (~> 2.0)
     env (0.1.2)
     erubis (2.7.0)
+    execjs (1.3.0)
+      multi_json (~> 1.0)
     factory_girl (3.0.0)
       activesupport (>= 3.0.0)
     factory_girl_rails (3.0.0)
@@ -108,6 +126,8 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
+    linecache19 (0.5.12)
+      ruby_core_source (>= 0.1.4)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -164,8 +184,22 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.9.0)
+    ruby-debug-base19 (0.11.25)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby_core_source (>= 0.1.4)
+    ruby-debug19 (0.11.6)
+      columnize (>= 0.3.1)
+      linecache19 (>= 0.5.11)
+      ruby-debug-base19 (>= 0.11.19)
+    ruby_core_source (0.1.5)
+      archive-tar-minitar (>= 0.5.2)
     rubyzip (0.9.6.1)
     sass (3.1.15)
+    sass-rails (3.2.5)
+      railties (~> 3.2.0)
+      sass (>= 3.1.10)
+      tilt (~> 1.3)
     selenium-webdriver (2.20.0)
       childprocess (>= 0.2.5)
       ffi (~> 1.0)
@@ -187,6 +221,9 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.32)
+    uglifier (1.2.3)
+      execjs (>= 0.3.0)
+      multi_json (>= 1.0.2)
     warden (1.1.1)
       rack (>= 1.0)
     webrat (0.7.3)
@@ -212,19 +249,25 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activeadmin
   activeadmin-cms!
   capybara
+  coffee-rails (~> 3.2.1)
   console_update
   database_cleaner
   email_spec
   factory_girl_rails
+  generator_spec!
   guard-rspec
   guard-spork
   jquery-rails
   rspec
   rspec-rails
+  ruby-debug19
+  sass-rails (~> 3.2.3)
   simplecov
   sqlite3
+  uglifier (>= 1.0.3)
   webrat
   wirble
   yard
