@@ -21,6 +21,13 @@ module ActiveAdmin
         template 'page.rb.erb', "app/models/#{file_path}.rb"
       end
 
+      def create_admin_views
+        template 'views/admin/cms/pages/_form.html.haml', "app/views/admin/cms/#{plural_table_name}/_form.html.haml"
+        template 'views/admin/cms/pages/_ingredient.html.haml', "app/views/admin/cms/#{plural_table_name}/_ingredient.html.haml"
+        template 'views/admin/cms/pages/_section.html.haml', "app/views/admin/cms/#{plural_table_name}/_section.html.haml"
+        template 'views/admin/cms/pages/_show.html.haml', "app/views/admin/cms/#{plural_table_name}/_show.html.haml"
+      end
+  
       def create_migrations
         Dir["#{self.class.source_root}/migrations/*.rb"].sort.each do |filepath|
           name = File.basename(filepath)

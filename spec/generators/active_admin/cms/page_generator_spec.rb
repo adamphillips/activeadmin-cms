@@ -26,6 +26,18 @@ describe ActiveAdmin::Cms::PageGenerator do
           end
         end
         directory "views" do
+          directory "admin" do
+            directory "cms" do
+              directory "pages" do
+                file "_form.html.haml" do
+                  contains "form_for"
+                end
+                file "_ingredient.html.haml"
+                file "_section.html.haml"
+                file "_show.html.haml"
+              end
+            end
+          end
         end
       end
       directory "db" do
