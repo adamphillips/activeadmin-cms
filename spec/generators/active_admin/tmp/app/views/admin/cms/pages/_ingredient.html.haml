@@ -1,7 +1,0 @@
--content = @page.content_for(ingredient.content_key)
-=semantic_form.fields_for(content) do |sf|
-  =sf.input *ingredient.input_settings
-  -if ingredient.content_type.display_preview?
-    %li
-      %label &nbsp;
-      = cms_content(@page, ingredient.content_key, ingredient.content_type.preview_options)

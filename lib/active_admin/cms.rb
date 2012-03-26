@@ -2,6 +2,10 @@ require 'haml'
 require 'acts_as_markup'
 require 'carrierwave'
 require 'carrierwave_backgrounder'
+require 'carrierwave/orm/activerecord'
+
+require 'acts_as_markup/railtie'
+ActiveSupport.run_load_hooks(:acts_as_markup, ActsAsMarkup)
 
 require 'active_admin/cms/helpers/cms_helper'
 require 'active_admin/cms/utility/class_level_inheritable_attributes'

@@ -1,6 +1,0 @@
-%legend
-  %span= section.admin_fieldset_title
--section.ingredients.each do |i_id, i|
-  = render :partial => 'admin/cms/pages/ingredient', :locals => {:semantic_form => semantic_form, :section => s, :ingredient => i}
--section.sections.each do |s_id, s|
-  = render :partial => 'admin/cms/pages/section', :locals => {:semantic_form => semantic_form, :section => s}

@@ -1,6 +1,3 @@
-require 'carrierwave'
-require 'carrierwave/orm/activerecord'
-
 module ActiveAdmin
   module Cms
     class Content < ActiveRecord::Base
