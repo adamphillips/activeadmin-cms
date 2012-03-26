@@ -7,11 +7,11 @@ require "activeadmin-cms/version"
 Gem::Specification.new do |s|
   s.name        = "activeadmin-cms"
   s.version     = ActiveadminCms::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of ActiveadminCms."
-  s.description = "TODO: Description of ActiveadminCms."
+  s.authors     = ["Adam Phillips"]
+  s.email       = ["adam@29ways.co.uk"]
+  s.homepage    = "On its way"
+  s.summary     = "Adds CMS functionality to ActiveAdmin"
+  s.description = "Converts ActiveAdmin into a simple CMS"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
 
