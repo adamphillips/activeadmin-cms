@@ -332,6 +332,7 @@ DEPENDENCIES
   haml
   jquery-rails
   mini_magick
+  rdiscount
   rspec
   rspec-rails
   ruby-debug19

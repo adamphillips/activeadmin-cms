@@ -1,6 +1,18 @@
 require 'spec_helper'
 
 describe ActiveAdmin::Cms::Content do
+ 
+  describe '#text' do
+    before :each do
+      @content = FactoryGirl.create(:content)
+    end
+
+    it 'should support markdown' do
+      text = '# Test Heading'
+      @content.text = text
+      @content.text.to_html.should == "<h1>Test Heading</h1>\n"
+    end
+  end
   
   describe 'setting content types' do
 

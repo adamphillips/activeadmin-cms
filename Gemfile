@@ -34,6 +34,7 @@ gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick' 
 
+gem 'rdiscount'
 gem 'acts_as_markup', :git => 'git@github.com:adamphillips/acts_as_markup.git'
 
 gem 'delayed_job_active_record'

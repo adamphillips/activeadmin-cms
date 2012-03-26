@@ -5,11 +5,15 @@ module ActiveAdmin
       include ActionView::Helpers
       include Haml::Helpers
 
+      class << self
+        include ActsAsMarkup::ActiveRecordExtension::ClassMethods
+      end
+
       self.table_name = 'content'
 
       belongs_to :page, :class_name => 'Cms::Page'
     
-      #acts_as_markdown :text
+      acts_as_markdown :text
       
       after_initialize do
         self.class.mount_uploader :image, content_type.image_uploader

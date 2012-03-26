@@ -19,6 +19,11 @@ module ActiveAdmin
             rescue NameError
             end
 
+            begin
+              klass = "::ContentTypes::#{method.to_s.camelcase}".constantize
+            rescue NameError
+            end
+
             if klass && klass.new.kind_of?(ActiveAdmin::Cms::ContentType)
               args[2] = args[1]
               args[1] = klass

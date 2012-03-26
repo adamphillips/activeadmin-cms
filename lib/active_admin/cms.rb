@@ -1,10 +1,7 @@
 require 'haml'
-require 'acts_as_markup'
 require 'carrierwave'
 require 'carrierwave_backgrounder'
 require 'carrierwave/orm/activerecord'
-
-require 'acts_as_markup/railtie'
 
 require 'active_admin/cms/helpers/cms_helper'
 require 'active_admin/cms/utility/class_level_inheritable_attributes'
@@ -24,6 +21,16 @@ module ActiveAdmin
   end
 end
 
+require 'acts_as_markup'
+require 'acts_as_markup/railtie'
+require 'acts_as_markup/active_record_extension'
+require 'acts_as_markup/stringlike'
+
+ActsAsMarkup.markdown_library = :rdiscount
+
+puts ##=== markdown stuf
+puts ActsAsMarkup::MARKDOWN_LIBS.inspect
+puts ActsAsMarkup.markdown_library
 
 require 'active_admin/cms/uploaders/content_file_uploader'
 require 'active_admin/cms/uploaders/content_image_uploader'
@@ -45,7 +52,6 @@ ActiveAdmin::Cms::ContentTypes.autoload :Image, 'active_admin/cms/content_types/
 ActiveAdmin::Cms::ContentTypes.autoload :String, 'active_admin/cms/content_types/string'
 ActiveAdmin::Cms::ContentTypes.autoload :Text, 'active_admin/cms/content_types/text'
 ActiveAdmin::Cms::ContentTypes.autoload :TextAndImage, 'active_admin/cms/content_types/text_and_image'
-
 #require 'active_admin/cms/content_types/image'
 #require 'active_admin/cms/content_types/string'
 #require 'active_admin/cms/content_types/text'
