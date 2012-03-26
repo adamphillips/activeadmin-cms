@@ -5,7 +5,6 @@ require 'carrierwave_backgrounder'
 require 'carrierwave/orm/activerecord'
 
 require 'acts_as_markup/railtie'
-ActiveSupport.run_load_hooks(:acts_as_markup, ActsAsMarkup)
 
 require 'active_admin/cms/helpers/cms_helper'
 require 'active_admin/cms/utility/class_level_inheritable_attributes'
@@ -28,9 +27,11 @@ end
 
 require 'active_admin/cms/uploaders/content_file_uploader'
 require 'active_admin/cms/uploaders/content_image_uploader'
+require 'active_admin/cms/uploaders/large_image_uploader'
 
 require 'active_admin/cms/content'
 require 'active_admin/cms/content_type'
+require 'active_admin/cms/controller_extensions'
 require 'active_admin/cms/page'
 require 'active_admin/cms/recipe'
 
@@ -39,6 +40,7 @@ ActiveAdmin::Cms::Recipe.autoload :Section, 'active_admin/cms/recipe/section'
 
 require 'active_admin/cms/recipes/section_helper'
 
+ActiveAdmin::Cms::ContentTypes.autoload :LargeImage, 'active_admin/cms/content_types/large_image'
 ActiveAdmin::Cms::ContentTypes.autoload :Image, 'active_admin/cms/content_types/image'
 ActiveAdmin::Cms::ContentTypes.autoload :String, 'active_admin/cms/content_types/string'
 ActiveAdmin::Cms::ContentTypes.autoload :Text, 'active_admin/cms/content_types/text'

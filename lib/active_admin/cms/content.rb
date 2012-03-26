@@ -10,9 +10,11 @@ module ActiveAdmin
       belongs_to :page, :class_name => 'Cms::Page'
     
       #acts_as_markdown :text
-
-      mount_uploader :image, ActiveAdmin::Cms::Uploaders::ContentImageUploader
-      mount_uploader :file, ActiveAdmin::Cms::Uploaders::ContentFileUploader
+      
+      after_initialize do
+        self.class.mount_uploader :image, content_type.image_uploader
+        self.class.mount_uploader :file, ActiveAdmin::Cms::Uploaders::ContentFileUploader
+      end
 
       #process_in_background :image
       #process_in_background :file
@@ -27,6 +29,10 @@ module ActiveAdmin
 
       def content_type=(type)
         update_attribute :content_type_class, type.to_s
+      end
+
+      def image_uploader
+        content_type.image_uploader
       end
 
       def set_content(value)

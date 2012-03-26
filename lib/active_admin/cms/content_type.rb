@@ -59,6 +59,10 @@ module ActiveAdmin
           @file_required
         end
         
+        def image_uploader
+          ActiveAdmin::Cms::Uploaders::ContentImageUploader
+        end
+
         def display_preview?
           @display_preview
         end

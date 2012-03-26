@@ -5,7 +5,7 @@ describe ActiveAdmin::Cms::Content do
   describe 'setting content types' do
 
     before :each do
-      @content = Factory(:content)
+      @content = FactoryGirl.create(:content)
     end
 
     subject {@content}
@@ -45,7 +45,7 @@ describe ActiveAdmin::Cms::Content do
 
   describe '#set_content' do
     before :each do
-      @content = Factory(:content)
+      @content = FactoryGirl.create(:content)
     end
 
     context 'when the content type is string' do      
@@ -75,7 +75,7 @@ describe ActiveAdmin::Cms::Content do
     context 'when the content type allows text' do
       before :each do
         @test_text = '123321'
-        @content = Factory(:content, :content_type => ActiveAdmin::Cms::ContentTypes::String,  :text => @test_text)
+        @content = FactoryGirl.create(:content, :content_type => ActiveAdmin::Cms::ContentTypes::String,  :text => @test_text)
       end
 
       it 'should return the text rendered as html' do
@@ -84,4 +84,42 @@ describe ActiveAdmin::Cms::Content do
       end
     end
   end
+
+  describe 'uploaders' do
+    before :each do
+      @content = FactoryGirl.create(:content)
+    end
+
+    describe '#image_uploader' do
+      context 'by default' do
+        it 'should be the default image uploader' do
+          @content.image_uploader.should == ActiveAdmin::Cms::Uploaders::ContentImageUploader
+          @content.image.respond_to?(:large).should be_false
+        end
+      end
+      context 'when the content type has been set to one that doesn`t change the image uploader' do
+        before :each do
+          @content = FactoryGirl.create(:image_content)
+        end
+        it 'still uses the default image uploader' do
+          @content.image_uploader.should == ActiveAdmin::Cms::Uploaders::ContentImageUploader
+          @content.image.respond_to?(:large).should be_false
+        end
+      end
+      context 'when the content type has been set to one that uses a different image uploader' do
+        before :each do
+          @content = ActiveAdmin::Cms::Content.new(:content_type_class => 'ActiveAdmin::Cms::ContentTypes::LargeImage')
+        end
+        it 'uses the uploader associated with the content type' do
+          #debugger
+          @content.image_uploader.should == ActiveAdmin::Cms::Uploaders::LargeImageUploader
+        end
+        it 'should attach the new uploader' do
+          #debugger
+          @content.image.respond_to?(:large).should be_true
+        end
+      end
+    end
+  end
+
 end
