@@ -7,5 +7,8 @@ Run active admin Install
 rails g active_admin:install
 
 Setup FOG variables in config/fog.yml
+Add fog initializer to fog.rb
+
+Amend config/application.rb to add recipes folder to autoload path
 
 This project rocks and uses MIT-LICENSE.

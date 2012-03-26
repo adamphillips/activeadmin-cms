@@ -1,3 +1,6 @@
+require 'carrierwave'
+require 'carrierwave/orm/activerecord'
+
 module ActiveAdmin
   module Cms
     class Content < ActiveRecord::Base
@@ -11,8 +14,8 @@ module ActiveAdmin
     
       #acts_as_markdown :text
 
-      #mount_uploader :image, ActiveAdmin::Cms::Uploaders::ContentImageUploader
-      #mount_uploader :file, ActiveAdmin::Cms::Uploaders::ContentFileUploader
+      mount_uploader :image, ActiveAdmin::Cms::Uploaders::ContentImageUploader
+      mount_uploader :file, ActiveAdmin::Cms::Uploaders::ContentFileUploader
 
       #process_in_background :image
       #process_in_background :file

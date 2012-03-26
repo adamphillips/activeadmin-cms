@@ -25,6 +25,7 @@ PATH
       daemons
       delayed_job_active_record
       fog
+      formtastic
       haml
       mini_magick
       rails (~> 3.2.2)
@@ -324,6 +325,7 @@ DEPENDENCIES
   email_spec
   factory_girl_rails
   fog
+  formtastic
   generator_spec!
   guard-rspec
   guard-spork

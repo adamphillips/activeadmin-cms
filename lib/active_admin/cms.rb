@@ -3,6 +3,7 @@ require 'acts_as_markup'
 require 'carrierwave'
 require 'carrierwave_backgrounder'
 
+require 'active_admin/cms/helpers/cms_helper'
 require 'active_admin/cms/utility/class_level_inheritable_attributes'
 
 module ActiveAdmin

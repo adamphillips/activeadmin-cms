@@ -20,6 +20,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency "haml"
 
+  s.add_dependency "formtastic"
+
   s.add_dependency "carrierwave"
   s.add_dependency "fog"
   s.add_dependency "mini_magick"
