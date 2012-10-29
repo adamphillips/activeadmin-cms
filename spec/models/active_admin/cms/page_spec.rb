@@ -217,7 +217,7 @@ describe ActiveAdmin::Cms::Page do
     end
     context 'when an invalid content_key is passed' do
     
-      pending 'it should throw an error'
+      # pending 'it should throw an error'
 
     end
 
