@@ -1,0 +1,14 @@
+language: ruby
+script: 'rspec ./spec'
+bundler_args: --without development
+rvm:
+  - 1.9.2
+gemfile:
+  - Gemfile
+notifications:
+  recipients:
+    - adam@29ways.co.uk
+before_install:
+  - rvm @default,@global do gem uninstall bundler -a -x
+  - gem install bundler --version '~> 1.0.0'
+  - bundle --version
