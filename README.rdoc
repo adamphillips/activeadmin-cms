@@ -35,7 +35,21 @@ The default user has a login of 'admin@example.com' and a password of 'password'
 
   rails g active_admin:cms:recipe Default
 
+You will need to also create a migration to insert a database record for the recipe
 
+  rails g migration AddDefaultRecipe
+
+  class AddDefaultRecipe < ActiveRecord::Migration
+    def up
+      r = Recipes::Default.new
+      r.title = 'Default'
+      r.type = 'Recipes::Default'
+      r.save
+    end
+
+    def down
+    end
+  end
 
 
 
