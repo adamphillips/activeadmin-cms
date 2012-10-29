@@ -2,13 +2,41 @@
 
 == To Install
 
-Run active admin Install
+=== Run active admin install
 
 rails g active_admin:install
 
-Setup FOG variables in config/fog.yml
 Add fog initializer to fog.rb
 
-Amend config/application.rb to add recipes folder to autoload path
+  CarrierWave.configure do |config|
+    config.fog_credentials = {
+      :provider               => 'AWS',
+      :aws_access_key_id      => '-aws-access-key-',
+      :aws_secret_access_key  => '-aws-secret-,
+      :region => 'eu-west-1'
+    }
+    config.fog_host  = "//mywebsite.co.uk.s3.amazonaws.com"
+    config.fog_directory  = "mywebsite.co.uk"
+  end
+
+Follow the on-screen instructions.
+
+The default user has a login of 'admin@example.com' and a password of 'password'.
+
+=== Run CMS install
+
+  rails g active_admin:cms:install
+
+=== Generate a page class
+
+  rails g active_admin:cms:page Page
+
+=== Generate a recipe
+
+  rails g active_admin:cms:recipe Default
+
+
+
+
 
 This project rocks and uses MIT-LICENSE.
