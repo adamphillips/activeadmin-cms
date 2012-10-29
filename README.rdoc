@@ -1,5 +1,6 @@
 = ActiveAdmin Cms
 
+{<img src="https://secure.travis-ci.org/adamphillips/activeadmin-cms.png" alt="Build Status" />}[http://travis-ci.org/adamphillips/activeadmin-cms]
 {<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/adamphillips/activeadmin-cms]
 
 A simple CMS extension for ActiveAdmin.
