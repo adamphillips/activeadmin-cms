@@ -1,4 +1,8 @@
-= ActiveadminCms
+= ActiveAdmin Cms
+
+{<img src="https://codeclimate.com/badge.png" />}[https://codeclimate.com/github/adamphillips/activeadmin-cms]
+
+A simple CMS extension for ActiveAdmin.
 
 == To Install
 
