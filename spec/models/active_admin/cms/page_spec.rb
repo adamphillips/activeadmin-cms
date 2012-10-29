@@ -100,7 +100,7 @@ describe ActiveAdmin::Cms::Page do
     subject {@page.meta_data}
 
     before :each do
-      @page = FactoryGirl.create(:page, :recipe => Factory(:basic_recipe))
+      @page = FactoryGirl.create(:page, :recipe => FactoryGirl.create(:basic_recipe))
     end
 
     it {should be_kind_of Hash}
@@ -184,7 +184,7 @@ describe ActiveAdmin::Cms::Page do
     subject{@page}
 
     before :each do
-      @page = FactoryGirl.create(:page, :recipe => Factory(:basic_recipe))
+      @page = FactoryGirl.create(:page, :recipe => FactoryGirl.create(:basic_recipe))
     end
 
     context 'when the content_key is valid for the pages recipe' do
@@ -225,7 +225,7 @@ describe ActiveAdmin::Cms::Page do
 
   describe '#set_value' do
     before :each do
-      @page = FactoryGirl.create(:page, :recipe => Factory(:basic_recipe))
+      @page = FactoryGirl.create(:page, :recipe => FactoryGirl.create(:basic_recipe))
     end
 
     context 'when passed a content_key => text hash' do

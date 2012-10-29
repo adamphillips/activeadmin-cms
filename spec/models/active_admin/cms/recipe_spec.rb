@@ -11,7 +11,7 @@ describe ActiveAdmin::Cms::Recipe do
 
   describe '#contains_content_key?' do
     before :each do
-      @recipe = Factory(:basic_recipe)
+      @recipe = FactoryGirl.create(:basic_recipe)
     end
 
     context 'when passed a content key contained in the recipe' do
@@ -28,7 +28,7 @@ describe ActiveAdmin::Cms::Recipe do
 
     context 'when a recipe section block is passed' do
       before :each do
-        @recipe = Factory(:recipe)
+        @recipe = FactoryGirl.create(:recipe)
 
         @recipe.define do
           section :test_section do
@@ -81,7 +81,7 @@ describe ActiveAdmin::Cms::Recipe do
 
   describe '#ingredient_for' do
     before :each do
-      @recipe = Factory(:basic_recipe)
+      @recipe = FactoryGirl.create(:basic_recipe)
     end
 
     context 'when passed a content key contained in the recipe' do

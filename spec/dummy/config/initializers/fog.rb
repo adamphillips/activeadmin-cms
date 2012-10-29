@@ -5,7 +5,7 @@ CarrierWave.configure do |config|
      :aws_secret_access_key  => 'mX0bbuH9MeIFjBwGSZa5VLD6Ed1mS7b48sGPm+HM',
      :region => 'eu-west-1'
    }
-   config.fog_host  = '//dev.aacms.s3.amazonaws.com'
+   config.asset_host  = '//dev.aacms.s3.amazonaws.com'
    config.fog_directory  = 'dev.aacms'
  end
 

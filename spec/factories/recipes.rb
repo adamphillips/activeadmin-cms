@@ -6,7 +6,7 @@ FactoryGirl.define do
 
   factory :basic_recipe, :class => ActiveAdmin::Cms::Recipe do |recipe|
     title "Basic Recipe"
-    recipe.after_build do |r|
+    after(:build) do |r|
       r.section :column do
         text :text_ingredient_1
         image :image_ingredient_1
