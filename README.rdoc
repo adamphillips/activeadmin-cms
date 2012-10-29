@@ -4,9 +4,15 @@
 
 === Run active admin install
 
-rails g active_admin:install
+  rails g active_admin:install
 
-Add fog initializer to fog.rb
+Follow the on-screen instructions.
+
+The default user has a login of 'admin@example.com' and a password of 'password'.
+
+== Configure Fog
+
+Create a new file in config/initializers called fog.rb to setup fog.
 
   CarrierWave.configure do |config|
     config.fog_credentials = {
@@ -18,10 +24,6 @@ Add fog initializer to fog.rb
     config.fog_host  = "//mywebsite.co.uk.s3.amazonaws.com"
     config.fog_directory  = "mywebsite.co.uk"
   end
-
-Follow the on-screen instructions.
-
-The default user has a login of 'admin@example.com' and a password of 'password'.
 
 === Run CMS install
 
