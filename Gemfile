@@ -43,5 +43,5 @@ gem 'daemons'
 
 group :development do
   gem 'factory_girl_rails'
-  gem 'generator_spec', :path => '/Users/aphillips/Projects/Development/OpenSource/gems/generator_spec'
+  gem 'generator_spec'
 end

@@ -30,13 +30,6 @@ PATH
       mini_magick
       rails (~> 3.2.2)
 
-PATH
-  remote: /Users/aphillips/Projects/Development/OpenSource/gems/generator_spec
-  specs:
-    generator_spec (0.8.5)
-      activerecord (>= 3.0, < 4.0)
-      railties (>= 3.0, < 4.0)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -158,6 +151,9 @@ GEM
     formatador (0.2.4)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    generator_spec (0.8.5)
+      rails (>= 3.0, < 4.0)
+      rspec-rails
     guard (1.5.2)
       listen (>= 0.4.2)
       lumberjack (>= 1.0.2)
@@ -348,7 +344,7 @@ DEPENDENCIES
   factory_girl_rails
   fog
   formtastic
-  generator_spec!
+  generator_spec
   guard-rspec
   guard-spork
   haml
