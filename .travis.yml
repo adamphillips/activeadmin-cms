@@ -8,3 +8,5 @@ gemfile:
 notifications:
   recipients:
     - adam@29ways.co.uk
+before_script:
+  - cd spec/dummy; RAILS_ENV=test rake db:migrate; cd ../..
