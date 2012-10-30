@@ -17,13 +17,19 @@ First you need to add ActiveAdmin Cms to your gemfile and run a bundle install
 
 === Run active admin install
 
+  If you haven't already run the ActiveAdmin install generator, do this first.
+
   > rails g active_admin:install
 
 Follow the on-screen instructions.
 
 The default user has a login of 'admin@example.com' and a password of 'password'.
 
-== Configure Fog
+=== Run CMS install
+
+  > rails g active_admin:cms:install
+
+=== Configure Fog
 
 Create a new file in config/initializers called fog.rb to setup fog.
 
@@ -38,10 +44,6 @@ Create a new file in config/initializers called fog.rb to setup fog.
     config.fog_host  = "//mywebsite.co.uk.s3.amazonaws.com"
     config.fog_directory  = "mywebsite.co.uk"
   end
-
-=== Run CMS install
-
-  > rails g active_admin:cms:install
 
 === Generate a page class
 
