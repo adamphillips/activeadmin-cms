@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<div id="post_full" class="ninecol">
+  <div class="post_meta">
+    <h2>{{ page.title }}</h2>
+    <p>{{ page.summary }}</p>
+  </div>
+
+  {{ content}}
+  {% if page.author_email %}
+  <p class="author">published on {{ page.date | date_to_string }} by {{ page.author }}</p>
+  {% endif %}
+</div>
+<div id="sidebar" class="threecol last">
+  <p class="tag no-top"><a href="/">Home</a></p>
+  <p class="tag"><a href="/resources">Resources</a></p>
+
+  <h3>Tags</h3>
+  {% for tag in site.tags %}
+  <p class="tag"><a href="/tag/{{ tag | first }}">{{ tag | first }} ({{ tag | last | size }})</a></p>
+  {% endfor %}
+
+  <h3>Recent</h3>
+  {% for recpost in site.posts limit: 5 %}
+  <p class="tag"><a href="{{ recpost.url }}">{{ recpost.title }}</a></p>
+  {% endfor %}
+
+</div>

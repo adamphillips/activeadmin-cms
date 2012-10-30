@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div class="post_index ninecol">
+  {{content}}
+</div>
+
+<div id="sidebar" class="threecol last">
+  <div class="supporting_text">
+    <p>{{ page.supporting_text }}</p>
+  </div>
+
+  <p class="tag no-top"><a href="/">Home</a></p>
+  <p class="tag"><a href="/docs">Docs</a></p>
+  <p class="tag"><a href="http://github.com/adamphillips/activeadmin-cms">Github</a></p>
+
+  <h3>Tags</h3>
+  {% for tag in site.tags %}
+  <p class="tag"><a href="/tag/{{ tag | first }}">{{ tag | first }} ({{ tag | last | size }})</a></p>
+  {% endfor %}
+
+  <h3>Recent</h3>
+  {% for recpost in site.posts limit: 5 %}
+  <p class="tag"><a href="{{ recpost.url }}">{{ recpost.title }}</a></p>
+  {% endfor %}
+
+</div>

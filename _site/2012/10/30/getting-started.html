@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 1140px Grid styles for IE -->
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+    <!-- The 1140px Grid - http://cssgrid.net/ -->
+    <link rel="stylesheet" href="/css/1140.css" type="text/css" media="screen" />
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" />
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/css/syntax_highlight/shCore.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/syntax_highlight/shCoreDefault.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/syntax_highlight/sh.css" type="text/css" media="screen" />
+
+    <script type="text/javascript" src="/js/syntax_highlight/shCore.js"></script>
+    <script type="text/javascript" src="/js/syntax_highlight/shBrushBash.js"></script>
+    <script type="text/javascript" src="/js/syntax_highlight/shBrushRuby.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+    <!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+    <script type="text/javascript" src="/js/css3-mediaqueries.js"></script>
+    
+    <script type="text/javascript" src="/js/application.js"></script>
+    <script type="text/javascript" src="/js/quick_filter.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
+
+    <title>Getting started</title>
+  </head>
+  <body>
+    <div id="header" class="container">
+      <div class="row">
+        <div class="twelvecol">
+          <h1><a href="/">ActiveAdmin CMS</a></h1>
+          <p><a href="http://travis-ci.org/adamphillips/activeadmin-cms"><img alt="Build Status" src="https://secure.travis-ci.org/adamphillips/activeadmin-cms.png"></a> <a href="https://codeclimate.com/github/adamphillips/activeadmin-cms"><img alt="Code Climate" src="https://codeclimate.com/badge.png"></a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="content_row" class="row">
+        <div class="post_index ninecol">
+  <h1 id='getting_started'>Getting Started</h1>
+
+<p>First you need to add ActiveAdmin Cms to your gemfile and run a bundle install</p>
+<pre class='brush: ruby; gutter: false'>
+# Gemfile
+gem 'activeadmin-cms'
+</pre><pre class='brush: bash; gutter: false'>
+> bundle install
+</pre>
+<h3 id='run_active_admin_install'>Run active admin install</h3>
+
+<p>If you haven&#8217;t already run the ActiveAdmin install generator, do this first.</p>
+<pre class='brush: bash; gutter: false'>
+> rails g active_admin:install
+</pre>
+<p>Follow the on-screen instructions.</p>
+
+<p>The default user has a login of &#8216;admin@example.com&#8217; and a password of &#8216;password&#8217;.</p>
+
+<h3 id='run_cms_install'>Run CMS install</h3>
+<pre class='brush: bash; gutter: false'>
+> rails g active_admin:cms:install
+</pre>
+<p>Configure Fog</p>
+
+<p>Create a new file in config/initializers called fog.rb to setup fog.</p>
+<pre class='brush: ruby; gutter: false'>
+# config/initializers/fog.rb
+CarrierWave.configure do |config|
+  config.fog_credentials = {
+    :provider               => 'AWS',
+    :aws_access_key_id      => '-aws-access-key-',
+    :aws_secret_access_key  => '-aws-secret-',
+    :region => 'eu-west-1'
+  }
+  config.fog_host  = "//mywebsite.co.uk.s3.amazonaws.com"
+  config.fog_directory  = "mywebsite.co.uk"
+end
+</pre>
+<h3 id='generate_a_page_class'>Generate a page class</h3>
+<pre class='brush: bash; gutter: false'>
+> rails g active_admin:cms:page Page
+</pre>
+<h3 id='generate_a_recipe'>Generate a recipe</h3>
+<pre class='brush: bash; gutter: false'>
+> rails g active_admin:cms:recipe Default
+</pre>
+<p>You will need to also create a migration to insert a database record for the recipe</p>
+<pre class='brush: bash; gutter: false'>
+> rails g migration AddDefaultRecipe
+</pre><pre class='brush: ruby; gutter: false'>
+# db/migrations/123456789_add_default_recipe.rb
+class AddDefaultRecipe &gt; ActiveRecord::Migration
+  def up
+    r = Recipes::Default.new
+    r.title = 'Default'
+    r.type = 'Recipes::Default'
+    r.save
+  end
+
+  def down
+  end
+end
+</pre>
+</div>
+
+<div id="sidebar" class="threecol last">
+  <div class="supporting_text">
+    <p></p>
+  </div>
+
+  <p class="tag no-top"><a href="/">Home</a></p>
+  <p class="tag"><a href="/docs">Docs</a></p>
+  <p class="tag"><a href="http://github.com/adamphillips/activeadmin-cms">Github</a></p>
+
+  <h3>Tags</h3>
+  
+
+  <h3>Recent</h3>
+  
+  <p class="tag"><a href="/2012/10/30/getting-started.html">Getting started</a></p>
+  
+
+</div>
+
+      </div>
+    </div>
+  </body>
+</html>

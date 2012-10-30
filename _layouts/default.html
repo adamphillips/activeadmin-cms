@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 1140px Grid styles for IE -->
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+    <!-- The 1140px Grid - http://cssgrid.net/ -->
+    <link rel="stylesheet" href="/css/1140.css" type="text/css" media="screen" />
+
+    <!-- Your styles -->
+    <link rel="stylesheet" href="/css/styles.css" type="text/css" media="screen" />
+
+    <!-- Syntax highlighter -->
+    <link rel="stylesheet" href="/css/syntax_highlight/shCore.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/syntax_highlight/shCoreDefault.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/css/syntax_highlight/sh.css" type="text/css" media="screen" />
+
+    <script type="text/javascript" src="/js/syntax_highlight/shCore.js"></script>
+    <script type="text/javascript" src="/js/syntax_highlight/shBrushBash.js"></script>
+    <script type="text/javascript" src="/js/syntax_highlight/shBrushRuby.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+    <!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+    <script type="text/javascript" src="/js/css3-mediaqueries.js"></script>
+    
+    <script type="text/javascript" src="/js/application.js"></script>
+    <script type="text/javascript" src="/js/quick_filter.js"></script>
+
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
+
+    <title>{{page.title}}</title>
+  </head>
+  <body>
+    <div id="header" class="container">
+      <div class="row">
+        <div class="twelvecol">
+          <h1><a href="/">ActiveAdmin CMS</a></h1>
+          <p><a href="http://travis-ci.org/adamphillips/activeadmin-cms"><img alt="Build Status" src="https://secure.travis-ci.org/adamphillips/activeadmin-cms.png"></a> <a href="https://codeclimate.com/github/adamphillips/activeadmin-cms"><img alt="Code Climate" src="https://codeclimate.com/badge.png"></a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="content_row" class="row">
+        {{ content }}
+      </div>
+    </div>
+  </body>
+</html>

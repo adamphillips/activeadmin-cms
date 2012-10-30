@@ -1,0 +1,153 @@
+/* ============================== */
+/* ! Layout for desktop version   */
+/* ============================== */
+
+@import '1140';
+@import 'settings';
+/*
+ * Tags
+ */
+
+body {font-family: 'Source sans pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: #303030; background-color: $light_grey; background-image:url(../images/struct/bg-texture.png); font-weight: 300}
+
+h1 {
+  font-size: 26px; background: url('/images/logo.jpg') no-repeat 0px 0px; padding-left: 35px; padding-top: 9px; height: 65px; font-weight: 400;
+
+  a {color: $light_blue}
+  a:hover {color: $orange}
+}
+
+h2 {font-size: 20px; margin-bottom: 25px; font-weight: 400; text-transform: uppercase; color: #808080}
+h2.tag_title {color: $white; font-size: 50px; margin-top: -25px; border-bottom: 1px solid $mid_grey; clear: both; background-color: $light_blue;}
+
+h3 {font-size: 20px; font-weight: 400; color: #404040; margin-top: 15px; margin-bottom: 15px; clear: both}
+
+a {color: $orange; text-decoration: none}
+a:hover {color: $light_blue}
+
+code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
+
+.clear {clear: both}
+
+#header {
+  height: 55px; background-color: $light_grey; color: $light_blue; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); position: fixed; width: 100%; box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.3); z-index: 1000;
+
+  .row {position: relative;}
+  h1 {padding-left: 0px;}
+  a {color: $dark_grey;}
+  p {position: absolute; right: 20px; top: 20px;}
+}
+
+.tag {text-transform: uppercase;}
+.date_tag {text-transform: uppercase}
+.post_tag {margin: 0px 2px; padding: 2px 2px; font-size: 12px; text-transform: uppercase; color: $light_blue; float:right;}
+.post_tag:hover {color: $orange};
+
+.post {padding: 10px}
+
+.content {
+  background-color: $light_grey; padding-top: 25px; margin-top: 55px; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+
+  > * {padding: 0px 10px}
+  p {margin-bottom: 15px; line-height: 25px;}
+  ul {list-style: none; margin-left: 0px}
+  ul li {margin-bottom: 5px}
+
+  .posts li {margin-bottom: 40px; list-style: none; padding: 20px; background-color: white;}
+  h3 {margin-top: 25px; color: #808080; margin-bottom: 5px; background-image: url(/images/heading-arrow.png); background-repeat: no-repeat; text-transform: uppercase}
+}
+
+#post_full {
+  @extend .content;
+
+  background-color: white;
+}
+
+.post_index {
+  @extend .content;
+
+  .post_preview {display: none; margin-top: 15px;}
+
+  .read_more {text-align: right}
+}
+
+.post_meta {
+  padding-bottom: 15px; margin-bottom: 15px; border-bottom: 1px solid #f0f0f0;
+
+  img {float: left; width: 60px; height: 60px; margin-right: 10px}
+  .author_tag {color: #a0a0a0}
+  h2 {margin-bottom: 0px; color: $black; font-size: 30px;}
+}
+
+.posts li .post_meta {padding-bottom: 5px; margin-bottom: 0px}
+
+#content .post_summary {color: #a0a0a0; margin-bottom: 0px;}
+
+
+#content .posts h3 {background-image: none}
+
+.author {margin-top: 20px; font-style: italic; clear: both}
+
+
+#sidebar {
+  padding-top: 10px; margin-top: 55px;
+
+  h3 {padding: 3px; font-size: 16px; text-transform: uppercase; font-weight: 400; margin-bottom: 5px; color: #909090}
+
+  .tag a {color: $light_blue; display: block; padding: 5px 3px; margin: 0px 1px; border-top: 1px solid $dark_grey; font-size: 14px}
+  .tag a:hover {color: $orange;}
+  .no-top a {border-top: 0px}
+
+  .supporting_text {margin-bottom: 20px}
+}
+
+.screenshot_container {
+  background-color: #f0f0f0; text-align: center; margin-bottom: 30px;
+  p {text-transform: uppercase; font-size: 12px; margin-top: 10px}
+}
+
+/*
+ * Google Analytics Glossary
+ */
+.glossary {
+  .term {
+    @extend .threecol;
+    height: 150px; background-color: #fdfdfd; margin-top: 10px; margin-bottom: 10px;
+    > * {padding: 0px 10px;}
+    h3 {font-size: 14px; color: black; margin-top: 10px;}
+    p {font-size: 12px; line-height: 18px;}
+  }
+
+  .term.last {
+    @extend .last;
+  }
+}
+
+
+.before_and_after {clear: both; background-color: #f0f0f0}
+.before_and_after .screenshot_container {width: 50%; float: left}
+.before_and_after .screenshot_container img {max-width: 95%}
+/* ============================= */
+/* ! Layout for mobile version   */
+/* ============================= */
+
+@media handheld, only screen and (max-width: 767px) {
+
+  body {
+  }
+
+}
+
+
+/* ========================================== */
+/* ! Provide higher res assets for iPhone 4   */
+/* ========================================== */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) { 
+
+/*	.logo {
+		background: url(logo2x.jpg) no-repeat;
+		background-size: 212px 303px;
+	}*/
+
+}
