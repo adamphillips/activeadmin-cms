@@ -4,7 +4,7 @@ module ActiveAdmin
     module Uploaders
       class ContentFileUploader < CarrierWave::Uploader::Base
 
-        include ::CarrierWave::Backgrounder::DelayStorage
+        include ::CarrierWave::Backgrounder::Delay
 
         # Include RMagick or MiniMagick support:
         # include CarrierWave::RMagick
