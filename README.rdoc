@@ -7,9 +7,17 @@ A simple CMS extension for ActiveAdmin.
 
 == To Install
 
+First you need to add ActiveAdmin Cms to your gemfile and run a bundle install
+
+  # Gemfile
+  gem 'activeadmin-cms'
+
+  # On command line
+  > bundle install
+
 === Run active admin install
 
-  rails g active_admin:install
+  > rails g active_admin:install
 
 Follow the on-screen instructions.
 
@@ -19,6 +27,7 @@ The default user has a login of 'admin@example.com' and a password of 'password'
 
 Create a new file in config/initializers called fog.rb to setup fog.
 
+  # config/initializers/fog.rb
   CarrierWave.configure do |config|
     config.fog_credentials = {
       :provider               => 'AWS',
@@ -32,20 +41,21 @@ Create a new file in config/initializers called fog.rb to setup fog.
 
 === Run CMS install
 
-  rails g active_admin:cms:install
+  > rails g active_admin:cms:install
 
 === Generate a page class
 
-  rails g active_admin:cms:page Page
+  > rails g active_admin:cms:page Page
 
 === Generate a recipe
 
-  rails g active_admin:cms:recipe Default
+  > rails g active_admin:cms:recipe Default
 
 You will need to also create a migration to insert a database record for the recipe
 
-  rails g migration AddDefaultRecipe
+  > rails g migration AddDefaultRecipe
 
+  # db/migrations/123456789_add_default_recipe.rb
   class AddDefaultRecipe < ActiveRecord::Migration
     def up
       r = Recipes::Default.new
