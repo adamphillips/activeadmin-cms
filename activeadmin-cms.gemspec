@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = ActiveadminCms::VERSION
   s.authors     = ["Adam Phillips"]
   s.email       = ["adam@29ways.co.uk"]
-  s.homepage    = "On its way"
+  s.homepage    = "https://github.com/adamphillips/activeadmin-cms"
   s.summary     = "Adds CMS functionality to ActiveAdmin"
   s.description = "Converts ActiveAdmin into a simple CMS"
 
