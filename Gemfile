@@ -41,7 +41,15 @@ gem 'delayed_job_active_record'
 gem 'carrierwave_backgrounder'
 gem 'daemons'
 
-group :development do
+group :test do
+  gem "rspec"
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'webrat'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'email_spec'
+  gem 'generator_spec'
   gem 'factory_girl_rails'
   gem 'generator_spec'
 end
