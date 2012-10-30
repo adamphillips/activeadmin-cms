@@ -52,4 +52,6 @@ group :test do
   gem 'generator_spec'
   gem 'factory_girl_rails'
   gem 'generator_spec'
+  gem 'guard-rspec'
+  gem 'guard-spork'
 end
