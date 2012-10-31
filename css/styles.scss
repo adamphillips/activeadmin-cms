@@ -11,7 +11,7 @@
 body {font-family: 'Source sans pro', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 15px; color: #303030; background-color: $light_grey; background-image:url(../images/struct/bg-texture.png); font-weight: 300}
 
 h1 {
-  font-size: 26px; background: url('/images/logo.jpg') no-repeat 0px 0px; padding-left: 35px; padding-top: 9px; height: 65px; font-weight: 400;
+  font-size: 26px; padding-left: 35px; padding-top: 9px; height: 65px; font-weight: 400;
 
   a {color: $light_blue}
   a:hover {color: $orange}
@@ -46,7 +46,7 @@ code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
 .post {padding: 10px}
 
 .content {
-  background-color: $light_grey; padding-top: 25px; margin-top: 55px; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: $light_grey; padding-top: 0px; margin-top: 55px; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 
   > * {padding: 0px 10px}
   p {margin-bottom: 15px; line-height: 25px;}
@@ -66,6 +66,7 @@ code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
 .post_index {
   @extend .content;
 
+  h1 {background-color: $dark_grey; line-height: 60px; margin-bottom: 20px; background-image:url(../images/struct/bg-texture.png); color: $white; display: block;}
   .post_preview {display: none; margin-top: 15px;}
 
   .read_more {text-align: right}
