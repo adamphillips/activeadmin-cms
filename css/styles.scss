@@ -30,7 +30,7 @@ code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
 .clear {clear: both}
 
 #header {
-  height: 50px; background-color: $light_grey; color: $light_blue; border-bottom: 24px solid $dark_grey; position: fixed; width: 100%; box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.3); z-index: 1000; padding: 0px;
+  height: 50px; background-color: $light_grey; color: $light_blue; border-bottom: 24px solid $dark_grey; position: fixed; width: 100%; z-index: 1000; padding: 0px;
 
   .row {position: relative;}
   h1 {padding-left: 0px; height: auto;}
@@ -39,12 +39,12 @@ code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
   #copout {
     position: static; clear: both; top: 0px; color: $light_grey; margin-top: 10px; font-size: 14px;
 
-    a {color: $white;}
+    a {color: $orange;}
   }
 }
 
 #header.scrolled {
-  border-bottom: 0px;
+  border-bottom: 0px; box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
 
   #copout {
     display: none;
