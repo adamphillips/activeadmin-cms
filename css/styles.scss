@@ -17,7 +17,7 @@ h1 {
   a:hover {color: $orange}
 }
 
-h2 {font-size: 20px; margin-bottom: 25px; font-weight: 300; text-transform: uppercase; color: #808080}
+h2 {font-size: 20px; margin-top: 35px; margin-bottom: 5px; font-weight: 300; text-transform: uppercase; color: $black;}
 h2.tag_title {color: $white; font-size: 50px; margin-top: -25px; border-bottom: 1px solid $mid_grey; clear: both; background-color: $light_blue;}
 
 h3 {font-size: 20px; font-weight: 300; color: #404040; margin-top: 15px; margin-bottom: 15px; clear: both}
@@ -30,12 +30,25 @@ code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
 .clear {clear: both}
 
 #header {
-  height: 55px; background-color: $light_grey; color: $light_blue; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); position: fixed; width: 100%; box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.3); z-index: 1000;
+  height: 50px; background-color: $light_grey; color: $light_blue; border-bottom: 24px solid $dark_grey; position: fixed; width: 100%; box-shadow: 1px 1px 9px rgba(0, 0, 0, 0.3); z-index: 1000; padding: 0px;
 
   .row {position: relative;}
-  h1 {padding-left: 0px;}
+  h1 {padding-left: 0px; height: auto;}
   a {color: $dark_grey;}
   p {position: absolute; right: 20px; top: 20px;}
+  #copout {
+    position: static; clear: both; top: 0px; color: $light_grey; margin-top: 10px; font-size: 14px;
+
+    a {color: $white;}
+  }
+}
+
+#header.scrolled {
+  border-bottom: 0px;
+
+  #copout {
+    display: none;
+  }
 }
 
 .tag {text-transform: uppercase;}
@@ -46,14 +59,14 @@ code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
 .post {padding: 10px}
 
 .content {
-  background-color: $light_grey; padding-top: 0px; padding-bottom: 30px; margin-top: 55px; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  background-color: $light_grey; padding-top: 0px; padding-bottom: 30px; margin-top: 75px; box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); border-radius: 0px 0px 5px 5px;
 
   > * {padding: 0px 10px}
   p {margin-bottom: 15px; line-height: 25px;}
   ul {list-style: none; margin-left: 0px}
   ul li {margin-bottom: 5px}
 
-  .posts li {margin-bottom: 40px; list-style: none; padding: 20px; background-color: white;}
+  .posts li {margin-bottom: 40px; list-style: none; padding: 20px; background-color: white; margin: 20px -10px;}
   h3 {margin-top: 25px; color: $dark_grey; margin-bottom: 5px; background-image: url(/images/heading-arrow.png); background-repeat: no-repeat; text-transform: uppercase}
 }
 
@@ -66,7 +79,7 @@ code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
 .post_index {
   @extend .content;
 
-  h1 {background-color: $dark_grey; line-height: 60px; margin-bottom: 20px; background-image:url(../images/struct/bg-texture.png); color: $white; display: block;}
+  h1 {background-color: $dark_grey; line-height: 60px; margin-bottom: 20px; background-image:url(../images/struct/bg-texture.png); color: $white; display: block; text-transform: uppercase;}
   .post_preview {display: none; margin-top: 15px;}
 
   .read_more {text-align: right}
@@ -80,7 +93,11 @@ code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
   h2 {margin-bottom: 0px; color: $black; font-size: 30px;}
 }
 
-.posts li .post_meta {padding-bottom: 5px; margin-bottom: 0px}
+.posts li .post_meta {
+  padding-bottom: 5px; margin-bottom: 0px;
+
+  h2 {margin-top: 0px;}
+}
 
 #content .post_summary {color: #a0a0a0; margin-bottom: 0px;}
 
@@ -91,7 +108,7 @@ code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
 
 
 #sidebar {
-  padding-top: 10px; margin-top: 55px;
+  padding-top: 10px; margin-top: 75px;
 
   h3 {padding: 3px; font-size: 16px; text-transform: uppercase; font-weight: 400; margin-bottom: 5px; color: #909090}
 
@@ -102,8 +119,12 @@ code {white-space: pre; padding: 10px; font-weight: 400; font-size: 12px;}
   .supporting_text {margin-bottom: 20px; color: $light_grey;}
 }
 
+#footer {
+  padding: 10px; color: $mid_grey; padding-top: 20px; text-align: center;
+}
+
 .screenshot_container {
-  background-color: #f0f0f0; text-align: center; margin-bottom: 30px;
+  background-color: $light_grey; text-align: center; margin-bottom: 30px;
   p {text-transform: uppercase; font-size: 12px; margin-top: 10px}
 }
 

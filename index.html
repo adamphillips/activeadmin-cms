@@ -3,22 +3,56 @@ layout: static
 title: ActiveAdmin CMS
 supporting_text: A simple CMS extension for ActiveAdmin.
 ---
-<ul class="posts">
-  {% for post in site.posts %}
-    <li>
-      <div class="post_meta">
-        <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-        <span class="author_tag">{{ post.author }}</span>
-        <span class="date_tag">{{ post.date | date_to_string }}</span>
-        {% for tag in post.tags %}
-          <a class="post_tag" href="/tag/{{ tag }}">{{ tag }}</a>
-        {% endfor %}
-      </div>
-      <p class="post_summary">{{ post.summary }}</p>
-      <div class="post_preview">
-        <p>{{ post.content | truncatewords:100 }}</p>
-      </div>
-      <p class="read_more">[<a href="{{ post.url }}">read more</a>]
-    </li>
-  {% endfor %}
-</ul>
+<h1>Active Admin CMS</h1>
+
+<p>
+ActiveAdmin CMS is an easy way to add simple CMS functionality to <a href="http://activeadmin.info">ActiveAdmin</a> for Ruby on Rails applications.
+</p>
+
+<h3>What does it do</h3>
+
+<p>ActiveAdmin CMS allows you to define recipes for CMS content using a simple Ruby DSL</p>
+<p>For example, a simple recipe might look like:</p>
+
+<pre class="brush: ruby; gutter: false;">
+module Recipes
+  class Default &lt; Cms::Recipe
+    
+    define do
+      section :main_content do
+        image :title_image, :hint => 'An image containing the title of the page'
+        string :sub_heading, :hint => 'The text that appears in bold under the title'
+        text :content, :hint => 'The main copy for the page'
+      end
+
+      section :side_bar do
+        image :image_1
+        image :image_2
+      end
+    end
+
+  end
+end
+</pre>
+
+<p>This defines the administration screen in ActiveAdmin for pages using this recipe.</p>
+
+<div class="screenshot_container">
+  <p>ActiveAdmin edit screen for the above recipe</p>
+  <img src="/images/posts/intro/admin-screen1.png" alt="ActiveAdmin edit screen for the above recipe" title="ActiveAdmin edit screen for the above recipe" />
+</div>
+
+<p>A recipe is made up of a number of different pieces of content, which can be one of a number of types including markdown formatted text and images.  You can also define additional custom types if you need them.</p>
+
+<p>To render the html for the entered content is as simple as using</p>
+
+<pre class="brush: ruby; gutter: false">
+cms_content('main_content:title_image')
+</pre>
+
+<p>in your view</p>
+
+<h3>What doesn't it do?</h3>
+
+<p>ActiveAdmin CMS aims to cater for small but design-intensive websites.  Therefore it leaves developer-centric tasks, such as the defining of routes, to the developer.</p>
+<p>If you are looking for a CMS to manage your 1000 page website where you can just apply a one-size-fits-all template to the entire website, then this probably isn't for you.  On the other hand, if you have a 10 page website but each page is specifically crafted with different CMS requirements this could be exactly what you need</p>

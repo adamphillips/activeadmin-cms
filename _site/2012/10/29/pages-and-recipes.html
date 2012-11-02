@@ -32,7 +32,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
 
-    <title>ActiveAdmin CMS</title>
+    <title>Pages and Recipes</title>
   </head>
   <body>
     <div id="header" class="container">
@@ -50,18 +50,24 @@
     <div class="container">
       <div id="content_row" class="row">
         <div class="post_index ninecol">
-  <h1>Active Admin CMS</h1>
+  <h1 id='pages_and_recipes'>Pages and Recipes</h1>
 
-<p>
-ActiveAdmin CMS is an easy way to add simple CMS functionality to <a href="http://activeadmin.info">ActiveAdmin</a> for Ruby on Rails applications.
-</p>
+<h2 id='creating_your_first_page_type'>Creating your first page type</h2>
 
-<h3>What does it do</h3>
+<p>ActiveAdmin CMS requires you to define at least one type of page to use with the cms. This consists of a model to represent the type of page. The easiest way to create a new model is to use the generator.</p>
+<pre class='brush: bash;'>
+> rails g active_admin:cms:page Page
+</pre>
+<p>This will create a new model, a migration to add the database table, add the ActiveAdmin definitions and create the views for editing the page.</p>
 
-<p>ActiveAdmin CMS allows you to define recipes for CMS content using a simple Ruby DSL</p>
-<p>For example, a simple recipe might look like:</p>
+<p>You will need to run the migration using rake db:migrate. You should now have a pages tab in active admin. However if you try and create a page, you will probably get a validation error saying that recipe is a mandatory field. So now we need to create a recipe.</p>
 
-<pre class="brush: ruby; gutter: false;">
+<h2 id='creating_a_recipe'>Creating a recipe</h2>
+
+<p>Recipes represent the structure of the content to be stored in the CMS. It is essentialy a model and so recipes live in your app/models/recipes/ folder.</p>
+
+<p>A typical recipe might look something like this:</p>
+<pre class='brush: ruby; gutter: false;'>
 module Recipes
   class Default &lt; Cms::Recipe
     
@@ -81,33 +87,26 @@ module Recipes
   end
 end
 </pre>
+<p>So we are saying that pages using this recipe should have 2 sections of content. In the main content area, there should be a title image, a short sub-heading and then a chunk of text which is the main copy for the page. There is also a side bar that contaings 2 images.</p>
 
-<p>This defines the administration screen in ActiveAdmin for pages using this recipe.</p>
-
-<div class="screenshot_container">
-  <p>ActiveAdmin edit screen for the above recipe</p>
-  <img src="/images/posts/intro/admin-screen1.png" alt="ActiveAdmin edit screen for the above recipe" title="ActiveAdmin edit screen for the above recipe" />
-</div>
-
-<p>A recipe is made up of a number of different pieces of content, which can be one of a number of types including markdown formatted text and images.  You can also define additional custom types if you need them.</p>
-
-<p>To render the html for the entered content is as simple as using</p>
-
-<pre class="brush: ruby; gutter: false">
-cms_content('main_content:title_image')
+<p>There is a generator to create a new recipe as well</p>
+<pre class='brush: bash'>
+> rails g active_admin:cms:recipe MyNewRecipe
 </pre>
+<p>This will create a new recipe at app/models/recipes/my_new_recipe.rb</p>
 
-<p>in your view</p>
+<h2 id='customising_the_recipe'>Customising the recipe</h2>
 
-<h3>What doesn't it do?</h3>
+<p>As you can see from the example above, recipes are split into sections. Within each section, you can have multiple content items. The content items defined by default are</p>
 
-<p>ActiveAdmin CMS aims to cater for small but design-intensive websites.  Therefore it leaves developer-centric tasks, such as the defining of routes, to the developer.</p>
-<p>If you are looking for a CMS to manage your 1000 page website where you can just apply a one-size-fits-all template to the entire website, then this probably isn't for you.  On the other hand, if you have a 10 page website but each page is specifically crafted with different CMS requirements this could be exactly what you need</p>
+<p>image : An image string : A short piece of text (represented by an &#60;input type=&#8221;text&#8221;&#62;) text : A larger piece of text possibly split into multiple paragraphs. This type supports markdown formatting by default text_and_image : An image with an associated piece of text</p>
+
+<p>These content types can be customised to suit your requirements. You can also add new content types if you need them. For more information on customising content types please see &#8230;</p>
 </div>
 
 <div id="sidebar" class="threecol last">
   <div class="supporting_text">
-    <p>A simple CMS extension for ActiveAdmin.</p>
+    <p></p>
   </div>
 
   <p class="tag no-top"><a href="/">Home</a></p>

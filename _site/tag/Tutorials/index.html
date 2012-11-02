@@ -32,7 +32,7 @@
 
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
 
-    <title>ActiveAdmin CMS</title>
+    <title>Tutorials</title>
   </head>
   <body>
     <div id="header" class="container">
@@ -50,64 +50,76 @@
     <div class="container">
       <div id="content_row" class="row">
         <div class="post_index ninecol">
-  <h1>Active Admin CMS</h1>
-
-<p>
-ActiveAdmin CMS is an easy way to add simple CMS functionality to <a href="http://activeadmin.info">ActiveAdmin</a> for Ruby on Rails applications.
-</p>
-
-<h3>What does it do</h3>
-
-<p>ActiveAdmin CMS allows you to define recipes for CMS content using a simple Ruby DSL</p>
-<p>For example, a simple recipe might look like:</p>
-
-<pre class="brush: ruby; gutter: false;">
-module Recipes
-  class Default &lt; Cms::Recipe
+  <h1>Tutorials</h1>
+<ul class="posts">
+  
     
-    define do
-      section :main_content do
-        image :title_image, :hint => 'An image containing the title of the page'
-        string :sub_heading, :hint => 'The text that appears in bold under the title'
-        text :content, :hint => 'The main copy for the page'
-      end
+      
+        <li>
+          <div class="post_meta">
+            <h2><a href="/2012/10/31/getting-started.html">Getting started</a></h2>
+            <span class="author_tag"></span>
+            <!-- <span class="date_tag">31 Oct 2012</span> -->
+            
+              
+            
+          </div>
+          <p class="post_summary">Installing and configuring ActiveAdmin CMS</p>
+          <div class="post_preview">
+            <p># Getting Started First you need to add ActiveAdmin Cms to your gemfile and run a bundle install <pre class="brush: ruby; gutter: false"> # Gemfile gem 'activeadmin-cms' </pre> <pre class="brush: bash; gutter: false"> > bundle install </pre> ### Run active admin install If you haven't already run the ActiveAdmin install generator, do this first. <pre class="brush: bash; gutter: false"> > rails g active_admin:install </pre> Follow the on-screen instructions. The default user has a login of 'admin@example.com' and a password of 'password'. ### Run CMS install <pre class="brush: bash; gutter: false"> > rails g active_admin:cms:install </pre> Configure Fog Create a new...</p>
+          </div>
+          <p>[<a href="/2012/10/31/getting-started.html">read more</a>]
+        </li>
+      
+    
+  
+    
+      
+        <li>
+          <div class="post_meta">
+            <h2><a href="/2012/10/30/customising-content-types.html">Customising Content Types</a></h2>
+            <span class="author_tag"></span>
+            <!-- <span class="date_tag">30 Oct 2012</span> -->
+            
+              
+            
+          </div>
+          <p class="post_summary">How to update the existing content types and create new ones</p>
+          <div class="post_preview">
+            <p># Customising Content Types ## Customising the existing Content Types It is highly likely that you will want to customise the content types that come with ActiveAdmin CMS. For example, the default sizes of images created by the image content type are 55px wide and 155px wide. The chances that these are the exact sizes needed for your website are pretty small so let's start by looking at how we would go about changing them ActiveAdmin CMS uses the Carrierwave gem to handle uploads. Carrierwave works by using Uploader classes that specify the details of the file to be uploaded....</p>
+          </div>
+          <p>[<a href="/2012/10/30/customising-content-types.html">read more</a>]
+        </li>
+      
+    
+  
+    
+      
+        <li>
+          <div class="post_meta">
+            <h2><a href="/2012/10/29/pages-and-recipes.html">Pages and Recipes</a></h2>
+            <span class="author_tag"></span>
+            <!-- <span class="date_tag">29 Oct 2012</span> -->
+            
+              
+            
+          </div>
+          <p class="post_summary">Explaining how Pages and Recipes work</p>
+          <div class="post_preview">
+            <p># Pages and Recipes ## Creating your first page type ActiveAdmin CMS requires you to define at least one type of page to use with the cms. This consists of a model to represent the type of page. The easiest way to create a new model is to use the generator. <pre class="brush: bash;"> > rails g active_admin:cms:page Page </pre> This will create a new model, a migration to add the database table, add the ActiveAdmin definitions and create the views for editing the page. You will need to run the migration using rake db:migrate. You should now have a...</p>
+          </div>
+          <p>[<a href="/2012/10/29/pages-and-recipes.html">read more</a>]
+        </li>
+      
+    
+  
+</ul>
 
-      section :side_bar do
-        image :image_1
-        image :image_2
-      end
-    end
-
-  end
-end
-</pre>
-
-<p>This defines the administration screen in ActiveAdmin for pages using this recipe.</p>
-
-<div class="screenshot_container">
-  <p>ActiveAdmin edit screen for the above recipe</p>
-  <img src="/images/posts/intro/admin-screen1.png" alt="ActiveAdmin edit screen for the above recipe" title="ActiveAdmin edit screen for the above recipe" />
-</div>
-
-<p>A recipe is made up of a number of different pieces of content, which can be one of a number of types including markdown formatted text and images.  You can also define additional custom types if you need them.</p>
-
-<p>To render the html for the entered content is as simple as using</p>
-
-<pre class="brush: ruby; gutter: false">
-cms_content('main_content:title_image')
-</pre>
-
-<p>in your view</p>
-
-<h3>What doesn't it do?</h3>
-
-<p>ActiveAdmin CMS aims to cater for small but design-intensive websites.  Therefore it leaves developer-centric tasks, such as the defining of routes, to the developer.</p>
-<p>If you are looking for a CMS to manage your 1000 page website where you can just apply a one-size-fits-all template to the entire website, then this probably isn't for you.  On the other hand, if you have a 10 page website but each page is specifically crafted with different CMS requirements this could be exactly what you need</p>
 </div>
 
 <div id="sidebar" class="threecol last">
   <div class="supporting_text">
-    <p>A simple CMS extension for ActiveAdmin.</p>
+    <p></p>
   </div>
 
   <p class="tag no-top"><a href="/">Home</a></p>
