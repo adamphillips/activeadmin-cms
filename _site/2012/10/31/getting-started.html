@@ -13,12 +13,8 @@
     <!-- Your styles -->
     <link rel="stylesheet" href="/activeadmin-cms/css/styles.css" type="text/css" media="screen" />
 
-    <!-- Syntax highlighter -->
-    <link rel="stylesheet" href="/activeadmin-cms/css/syntax_highlight/shCore.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/activeadmin-cms/css/syntax_highlight/shCoreDefault.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/activeadmin-cms/css/syntax_highlight/sh.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/activeadmin-cms/css/pygments/styles.css" type="text/css" media="screen" />
 
-    <script type="text/javascript" src="/activeadmin-cms/js/syntax_highlight/shCore.js"></script>
     <script type="text/javascript" src="/activeadmin-cms/js/syntax_highlight/shBrushBash.js"></script>
     <script type="text/javascript" src="/activeadmin-cms/js/syntax_highlight/shBrushRuby.js"></script>
 
@@ -53,67 +49,66 @@
   <h1 id='getting_started'>Getting Started</h1>
 
 <p>First you need to add ActiveAdmin Cms to your gemfile and run a bundle install</p>
-<pre class='brush: ruby; gutter: false'>
-# Gemfile
-gem 'activeadmin-cms'
-</pre><pre class='brush: bash; gutter: false'>
-> bundle install
-</pre>
+<div class='highlight'><pre><code class='ruby'><span class='c1'># Gemfile</span>
+<span class='n'>gem</span> <span class='s1'>&#39;activeadmin-cms&#39;</span>
+</code></pre>
+</div><div class='highlight'><pre><code class='bash'>&gt; bundle install
+</code></pre>
+</div>
 <h3 id='run_active_admin_install'>Run active admin install</h3>
 
 <p>If you haven&#8217;t already run the ActiveAdmin install generator, do this first.</p>
-<pre class='brush: bash; gutter: false'>
-> rails g active_admin:install
-</pre>
+<div class='highlight'><pre><code class='bash'>&gt; rails g active_admin:install
+</code></pre>
+</div>
 <p>Follow the on-screen instructions.</p>
 
 <p>The default user has a login of &#8216;admin@example.com&#8217; and a password of &#8216;password&#8217;.</p>
 
 <h3 id='run_cms_install'>Run CMS install</h3>
-<pre class='brush: bash; gutter: false'>
-> rails g active_admin:cms:install
-</pre>
-<p>Configure Fog</p>
+<div class='highlight'><pre><code class='bash'>&gt; rails g active_admin:cms:install
+</code></pre>
+</div>
+<h3 id='configure_fog'>Configure Fog</h3>
 
 <p>Create a new file in config/initializers called fog.rb to setup fog.</p>
-<pre class='brush: ruby; gutter: false'>
-# config/initializers/fog.rb
-CarrierWave.configure do |config|
-  config.fog_credentials = {
-    :provider               => 'AWS',
-    :aws_access_key_id      => '-aws-access-key-',
-    :aws_secret_access_key  => '-aws-secret-',
-    :region => 'eu-west-1'
-  }
-  config.fog_host  = "//mywebsite.co.uk.s3.amazonaws.com"
-  config.fog_directory  = "mywebsite.co.uk"
-end
-</pre>
+<div class='highlight'><pre><code class='ruby'><span class='no'>CarrierWave</span><span class='o'>.</span><span class='n'>configure</span> <span class='k'>do</span> <span class='o'>|</span><span class='n'>config</span><span class='o'>|</span>
+  <span class='n'>config</span><span class='o'>.</span><span class='n'>fog_credentials</span> <span class='o'>=</span> <span class='p'>{</span>
+    <span class='ss'>:provider</span>               <span class='o'>=&gt;</span> <span class='s1'>&#39;AWS&#39;</span><span class='p'>,</span>
+    <span class='ss'>:aws_access_key_id</span>      <span class='o'>=&gt;</span> <span class='s1'>&#39;-aws-access-key-&#39;</span><span class='p'>,</span>
+    <span class='ss'>:aws_secret_access_key</span>  <span class='o'>=&gt;</span> <span class='s1'>&#39;-aws-secret-&#39;</span><span class='p'>,</span>
+    <span class='ss'>:region</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;eu-west-1&#39;</span>
+  <span class='p'>}</span>
+  <span class='n'>config</span><span class='o'>.</span><span class='n'>fog_host</span>  <span class='o'>=</span> <span class='s2'>&quot;//mywebsite.co.uk.s3.amazonaws.com&quot;</span>
+  <span class='n'>config</span><span class='o'>.</span><span class='n'>fog_directory</span>  <span class='o'>=</span> <span class='s2'>&quot;mywebsite.co.uk&quot;</span>
+<span class='k'>end</span>
+</code></pre>
+</div>
 <h3 id='generate_a_page_class'>Generate a page class</h3>
-<pre class='brush: bash; gutter: false'>
-> rails g active_admin:cms:page Page
-</pre>
+<div class='highlight'><pre><code class='bash'>&gt; rails g active_admin:cms:page Page
+</code></pre>
+</div>
 <h3 id='generate_a_recipe'>Generate a recipe</h3>
-<pre class='brush: bash; gutter: false'>
-> rails g active_admin:cms:recipe Default
-</pre>
+<div class='highlight'><pre><code class='bash'>&gt; rails g active_admin:cms:recipe Default
+</code></pre>
+</div>
 <p>You will need to also create a migration to insert a database record for the recipe</p>
-<pre class='brush: bash; gutter: false'>
-> rails g migration AddDefaultRecipe
-</pre><pre class='brush: ruby; gutter: false'>
-# db/migrations/123456789_add_default_recipe.rb
-class AddDefaultRecipe &gt; ActiveRecord::Migration
-  def up
-    r = Recipes::Default.new
-    r.title = 'Default'
-    r.type = 'Recipes::Default'
-    r.save
-  end
+<div class='highlight'><pre><code class='bash'>&gt; rails g migration AddDefaultRecipe
+</code></pre>
+</div><div class='highlight'><pre><code class='ruby'><span class='c1'># db/migrations/123456789_add_default_recipe.rb</span>
+<span class='k'>class</span> <span class='nc'>AddDefaultRecipe</span> <span class='o'>&amp;</span><span class='n'>gt</span><span class='p'>;</span> <span class='no'>ActiveRecord</span><span class='o'>::</span><span class='no'>Migration</span>
+  <span class='k'>def</span> <span class='nf'>up</span>
+    <span class='n'>r</span> <span class='o'>=</span> <span class='no'>Recipes</span><span class='o'>::</span><span class='no'>Default</span><span class='o'>.</span><span class='n'>new</span>
+    <span class='n'>r</span><span class='o'>.</span><span class='n'>title</span> <span class='o'>=</span> <span class='s1'>&#39;Default&#39;</span>
+    <span class='n'>r</span><span class='o'>.</span><span class='n'>type</span> <span class='o'>=</span> <span class='s1'>&#39;Recipes::Default&#39;</span>
+    <span class='n'>r</span><span class='o'>.</span><span class='n'>save</span>
+  <span class='k'>end</span>
 
-  def down
-  end
-end
-</pre>
+  <span class='k'>def</span> <span class='nf'>down</span>
+  <span class='k'>end</span>
+<span class='k'>end</span>
+</code></pre>
+</div>
 </div>
 
 <div id="sidebar" class="threecol last">
@@ -121,22 +116,22 @@ end
     <p></p>
   </div>
 
-  <p class="tag no-top"><a href="/">Home</a></p>
+  <p class="tag no-top"><a href="/activeadmin-cms/">Home</a></p>
   <!-- <p class="tag"><a href="/docs">Docs</a></p> -->
   <p class="tag"><a href="http://github.com/adamphillips/activeadmin-cms" rel="external">Github</a></p>
 
   <h3>Tags</h3>
   
-  <p class="tag"><a href="/tag/Tutorials">Tutorials (3)</a></p>
+  <p class="tag"><a href="/activeadmin-cms/tag/Tutorials">Tutorials (3)</a></p>
   
 
   <h3>Recently added</h3>
   
-  <p class="tag"><a href="/2012/10/31/getting-started.html">Getting started</a></p>
+  <p class="tag"><a href="/activeadmin-cms/2012/10/31/getting-started.html">Getting started</a></p>
   
-  <p class="tag"><a href="/2012/10/30/customising-content-types.html">Customising Content Types</a></p>
+  <p class="tag"><a href="/activeadmin-cms/2012/10/30/customising-content-types.html">Customising Content Types</a></p>
   
-  <p class="tag"><a href="/2012/10/29/pages-and-recipes.html">Pages and Recipes</a></p>
+  <p class="tag"><a href="/activeadmin-cms/2012/10/29/pages-and-recipes.html">Pages and Recipes</a></p>
   
 
 </div>

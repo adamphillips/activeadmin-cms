@@ -14,23 +14,24 @@ ActiveAdmin CMS uses the Carrierwave gem to handle uploads.  Carrierwave works b
 
 Fortunately Carrierwave has it's own generator for creating these classes so at the console you just need to type
 
-<pre class="brush: bash; gutter: false;">
+{% highlight bash %}
 rails g uploader MyNewImageUploader
-</pre>
+{% endhighlight %}
 
 There are lots of options that you can use to control what happens to your uploaded files and I suggest you check out the Carrierwave docs for more information.  One key point to note however is that by default, ActiveAdmin CMS uses the Fog gem to store the images on Amazon S3.  If you want to continue using this with your new Uploader, be sure to include the line
-<pre class="brush: ruby; gutter: false;">
+
+{% highlight ruby %}
 storage :fog
-</pre>
+{% endhighlight %}
 
 Once you have setup your new uploader, we just need to tell the image content type to use this uploader instead of the default.
 
 So to do this, we need to override the image_uploader method of the ActiveAdmin::Cms::ContentTypes::Image class to return our new uploader instead of the default one.  To do this, in an initializer we just need to include the following:
 
-<pre class="brush: ruby; gutter: false">
+{% highlight ruby %}
 class ActiveAdmin::Cms::ContentTypes::Image
   def self.image_uploader
     MyNewImageUploader
   end
 end
-</pre>
+{% endhighlight %}

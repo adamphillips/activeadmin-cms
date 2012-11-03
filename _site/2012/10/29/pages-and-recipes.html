@@ -13,12 +13,8 @@
     <!-- Your styles -->
     <link rel="stylesheet" href="/activeadmin-cms/css/styles.css" type="text/css" media="screen" />
 
-    <!-- Syntax highlighter -->
-    <link rel="stylesheet" href="/activeadmin-cms/css/syntax_highlight/shCore.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/activeadmin-cms/css/syntax_highlight/shCoreDefault.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/activeadmin-cms/css/syntax_highlight/sh.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/activeadmin-cms/css/pygments/styles.css" type="text/css" media="screen" />
 
-    <script type="text/javascript" src="/activeadmin-cms/js/syntax_highlight/shCore.js"></script>
     <script type="text/javascript" src="/activeadmin-cms/js/syntax_highlight/shBrushBash.js"></script>
     <script type="text/javascript" src="/activeadmin-cms/js/syntax_highlight/shBrushRuby.js"></script>
 
@@ -55,9 +51,9 @@
 <h2 id='creating_your_first_page_type'>Creating your first page type</h2>
 
 <p>ActiveAdmin CMS requires you to define at least one type of page to use with the cms. This consists of a model to represent the type of page. The easiest way to create a new model is to use the generator.</p>
-<pre class='brush: bash;'>
-> rails g active_admin:cms:page Page
-</pre>
+<div class='highlight'><pre><code class='bash'>&gt; rails g active_admin:cms:page Page
+</code></pre>
+</div>
 <p>This will create a new model, a migration to add the database table, add the ActiveAdmin definitions and create the views for editing the page.</p>
 
 <p>You will need to run the migration using rake db:migrate. You should now have a pages tab in active admin. However if you try and create a page, you will probably get a validation error saying that recipe is a mandatory field. So now we need to create a recipe.</p>
@@ -67,32 +63,32 @@
 <p>Recipes represent the structure of the content to be stored in the CMS. It is essentialy a model and so recipes live in your app/models/recipes/ folder.</p>
 
 <p>A typical recipe might look something like this:</p>
-<pre class='brush: ruby; gutter: false;'>
-module Recipes
-  class Default &lt; Cms::Recipe
+<div class='highlight'><pre><code class='ruby'><span class='k'>module</span> <span class='nn'>Recipes</span>
+  <span class='k'>class</span> <span class='nc'>Default</span> <span class='o'>&lt;</span> <span class='no'>Cms</span><span class='o'>::</span><span class='no'>Recipe</span>
     
-    define do
-      section :main_content do
-        image :title_image, :hint => 'An image containing the title of the page'
-        string :sub_heading, :hint => 'The text that appears in bold under the title'
-        text :content, :hint => 'The main copy for the page'
-      end
+    <span class='n'>define</span> <span class='k'>do</span>
+      <span class='n'>section</span> <span class='ss'>:main_content</span> <span class='k'>do</span>
+        <span class='n'>image</span> <span class='ss'>:title_image</span><span class='p'>,</span> <span class='ss'>:hint</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;An image containing the title of the page&#39;</span>
+        <span class='n'>string</span> <span class='ss'>:sub_heading</span><span class='p'>,</span> <span class='ss'>:hint</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;The text that appears in bold under the title&#39;</span>
+        <span class='n'>text</span> <span class='ss'>:content</span><span class='p'>,</span> <span class='ss'>:hint</span> <span class='o'>=&gt;</span> <span class='s1'>&#39;The main copy for the page&#39;</span>
+      <span class='k'>end</span>
 
-      section :side_bar do
-        image :image_1
-        image :image_2
-      end
-    end
+      <span class='n'>section</span> <span class='ss'>:side_bar</span> <span class='k'>do</span>
+        <span class='n'>image</span> <span class='ss'>:image_1</span>
+        <span class='n'>image</span> <span class='ss'>:image_2</span>
+      <span class='k'>end</span>
+    <span class='k'>end</span>
 
-  end
-end
-</pre>
+  <span class='k'>end</span>
+<span class='k'>end</span>
+</code></pre>
+</div>
 <p>So we are saying that pages using this recipe should have 2 sections of content. In the main content area, there should be a title image, a short sub-heading and then a chunk of text which is the main copy for the page. There is also a side bar that contaings 2 images.</p>
 
 <p>There is a generator to create a new recipe as well</p>
-<pre class='brush: bash'>
-> rails g active_admin:cms:recipe MyNewRecipe
-</pre>
+<div class='highlight'><pre><code class='bash'>&gt; rails g active_admin:cms:recipe MyNewRecipe
+</code></pre>
+</div>
 <p>This will create a new recipe at app/models/recipes/my_new_recipe.rb</p>
 
 <h2 id='customising_the_recipe'>Customising the recipe</h2>
@@ -109,22 +105,22 @@ end
     <p></p>
   </div>
 
-  <p class="tag no-top"><a href="/">Home</a></p>
+  <p class="tag no-top"><a href="/activeadmin-cms/">Home</a></p>
   <!-- <p class="tag"><a href="/docs">Docs</a></p> -->
   <p class="tag"><a href="http://github.com/adamphillips/activeadmin-cms" rel="external">Github</a></p>
 
   <h3>Tags</h3>
   
-  <p class="tag"><a href="/tag/Tutorials">Tutorials (3)</a></p>
+  <p class="tag"><a href="/activeadmin-cms/tag/Tutorials">Tutorials (3)</a></p>
   
 
   <h3>Recently added</h3>
   
-  <p class="tag"><a href="/2012/10/31/getting-started.html">Getting started</a></p>
+  <p class="tag"><a href="/activeadmin-cms/2012/10/31/getting-started.html">Getting started</a></p>
   
-  <p class="tag"><a href="/2012/10/30/customising-content-types.html">Customising Content Types</a></p>
+  <p class="tag"><a href="/activeadmin-cms/2012/10/30/customising-content-types.html">Customising Content Types</a></p>
   
-  <p class="tag"><a href="/2012/10/29/pages-and-recipes.html">Pages and Recipes</a></p>
+  <p class="tag"><a href="/activeadmin-cms/2012/10/29/pages-and-recipes.html">Pages and Recipes</a></p>
   
 
 </div>

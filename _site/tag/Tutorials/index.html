@@ -13,12 +13,8 @@
     <!-- Your styles -->
     <link rel="stylesheet" href="/activeadmin-cms/css/styles.css" type="text/css" media="screen" />
 
-    <!-- Syntax highlighter -->
-    <link rel="stylesheet" href="/activeadmin-cms/css/syntax_highlight/shCore.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/activeadmin-cms/css/syntax_highlight/shCoreDefault.css" type="text/css" media="screen" />
-    <link rel="stylesheet" href="/activeadmin-cms/css/syntax_highlight/sh.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="/activeadmin-cms/css/pygments/styles.css" type="text/css" media="screen" />
 
-    <script type="text/javascript" src="/activeadmin-cms/js/syntax_highlight/shCore.js"></script>
     <script type="text/javascript" src="/activeadmin-cms/js/syntax_highlight/shBrushBash.js"></script>
     <script type="text/javascript" src="/activeadmin-cms/js/syntax_highlight/shBrushRuby.js"></script>
 
@@ -66,7 +62,19 @@
           </div>
           <p class="post_summary">Installing and configuring ActiveAdmin CMS</p>
           <div class="post_preview">
-            <p># Getting Started First you need to add ActiveAdmin Cms to your gemfile and run a bundle install <pre class="brush: ruby; gutter: false"> # Gemfile gem 'activeadmin-cms' </pre> <pre class="brush: bash; gutter: false"> > bundle install </pre> ### Run active admin install If you haven't already run the ActiveAdmin install generator, do this first. <pre class="brush: bash; gutter: false"> > rails g active_admin:install </pre> Follow the on-screen instructions. The default user has a login of 'admin@example.com' and a password of 'password'. ### Run CMS install <pre class="brush: bash; gutter: false"> > rails g active_admin:cms:install </pre> Configure Fog Create a new...</p>
+            <p># Getting Started First you need to add ActiveAdmin Cms to your gemfile and run a bundle install <div class="highlight"><pre><code class="ruby"> <span class="c1"># Gemfile gem &#39;activeadmin-cms&#39; </span>
+</code></pre>
+</div>
+ <div class="highlight"><pre><code class="bash"> &gt; bundle install 
+</code></pre>
+</div>
+ ### Run active admin install If you haven't already run the ActiveAdmin install generator, do this first. <div class="highlight"><pre><code class="bash"> &gt; rails g active_admin:install 
+</code></pre>
+</div>
+ Follow the on-screen instructions. The default user has a login of 'admin@example.com' and a password of 'password'. ### Run CMS install <div class="highlight"><pre><code class="bash"> &gt; rails g active_admin:cms:install 
+</code></pre>
+</div>
+ ###...</p>
           </div>
           <p>[<a href="/2012/10/31/getting-started.html">read more</a>]
         </li>
@@ -106,7 +114,10 @@
           </div>
           <p class="post_summary">Explaining how Pages and Recipes work</p>
           <div class="post_preview">
-            <p># Pages and Recipes ## Creating your first page type ActiveAdmin CMS requires you to define at least one type of page to use with the cms. This consists of a model to represent the type of page. The easiest way to create a new model is to use the generator. <pre class="brush: bash;"> > rails g active_admin:cms:page Page </pre> This will create a new model, a migration to add the database table, add the ActiveAdmin definitions and create the views for editing the page. You will need to run the migration using rake db:migrate. You should now have a...</p>
+            <p># Pages and Recipes ## Creating your first page type ActiveAdmin CMS requires you to define at least one type of page to use with the cms. This consists of a model to represent the type of page. The easiest way to create a new model is to use the generator. <div class="highlight"><pre><code class="bash"> &gt; rails g active_admin:cms:page Page 
+</code></pre>
+</div>
+ This will create a new model, a migration to add the database table, add the ActiveAdmin definitions and create the views for editing the page. You will need to run the migration using rake db:migrate. You should...</p>
           </div>
           <p>[<a href="/2012/10/29/pages-and-recipes.html">read more</a>]
         </li>
@@ -122,22 +133,22 @@
     <p></p>
   </div>
 
-  <p class="tag no-top"><a href="/">Home</a></p>
+  <p class="tag no-top"><a href="/activeadmin-cms/">Home</a></p>
   <!-- <p class="tag"><a href="/docs">Docs</a></p> -->
   <p class="tag"><a href="http://github.com/adamphillips/activeadmin-cms" rel="external">Github</a></p>
 
   <h3>Tags</h3>
   
-  <p class="tag"><a href="/tag/Tutorials">Tutorials (3)</a></p>
+  <p class="tag"><a href="/activeadmin-cms/tag/Tutorials">Tutorials (3)</a></p>
   
 
   <h3>Recently added</h3>
   
-  <p class="tag"><a href="/2012/10/31/getting-started.html">Getting started</a></p>
+  <p class="tag"><a href="/activeadmin-cms/2012/10/31/getting-started.html">Getting started</a></p>
   
-  <p class="tag"><a href="/2012/10/30/customising-content-types.html">Customising Content Types</a></p>
+  <p class="tag"><a href="/activeadmin-cms/2012/10/30/customising-content-types.html">Customising Content Types</a></p>
   
-  <p class="tag"><a href="/2012/10/29/pages-and-recipes.html">Pages and Recipes</a></p>
+  <p class="tag"><a href="/activeadmin-cms/2012/10/29/pages-and-recipes.html">Pages and Recipes</a></p>
   
 
 </div>

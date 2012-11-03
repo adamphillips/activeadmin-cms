@@ -8,22 +8,22 @@ tags: Tutorials
 
 First you need to add ActiveAdmin Cms to your gemfile and run a bundle install
 
-<pre class="brush: ruby; gutter: false">
+{% highlight ruby %}
 # Gemfile
 gem 'activeadmin-cms'
-</pre>
+{% endhighlight %}
 
-<pre class="brush: bash; gutter: false">
+{% highlight bash %}
 > bundle install
-</pre>
+{% endhighlight %}
 
 ### Run active admin install
 
 If you haven't already run the ActiveAdmin install generator, do this first.
 
-<pre class="brush: bash; gutter: false">
+{% highlight bash %}
 > rails g active_admin:install
-</pre>
+{% endhighlight %}
 
 Follow the on-screen instructions.
 
@@ -31,15 +31,15 @@ The default user has a login of 'admin@example.com' and a password of 'password'
 
 ### Run CMS install
 
-<pre class="brush: bash; gutter: false">
+{% highlight bash %}
 > rails g active_admin:cms:install
-</pre>
-Configure Fog
+{% endhighlight %}
+
+### Configure Fog
 
 Create a new file in config/initializers called fog.rb to setup fog.
 
-<pre class="brush: ruby; gutter: false">
-# config/initializers/fog.rb
+{% highlight ruby %}
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',
@@ -50,27 +50,27 @@ CarrierWave.configure do |config|
   config.fog_host  = "//mywebsite.co.uk.s3.amazonaws.com"
   config.fog_directory  = "mywebsite.co.uk"
 end
-</pre>
+{% endhighlight %}
 
 ### Generate a page class
 
-<pre class="brush: bash; gutter: false">
+{% highlight bash %}
 > rails g active_admin:cms:page Page
-</pre>
+{% endhighlight %}
 
 ### Generate a recipe
 
-<pre class="brush: bash; gutter: false">
+{% highlight bash %}
 > rails g active_admin:cms:recipe Default
-</pre>
+{% endhighlight %}
 
 You will need to also create a migration to insert a database record for the recipe
 
-<pre class="brush: bash; gutter: false">
+{% highlight bash %}
 > rails g migration AddDefaultRecipe
-</pre>
+{% endhighlight %}
 
-<pre class="brush: ruby; gutter: false">
+{% highlight ruby %}
 # db/migrations/123456789_add_default_recipe.rb
 class AddDefaultRecipe &gt; ActiveRecord::Migration
   def up
@@ -83,4 +83,4 @@ class AddDefaultRecipe &gt; ActiveRecord::Migration
   def down
   end
 end
-</pre>
+{% endhighlight %}

@@ -10,9 +10,9 @@ tags: Tutorials
 
 ActiveAdmin CMS requires you to define at least one type of page to use with the cms.  This consists of a model to represent the type of page.  The easiest way to create a new model is to use the generator.
 
-<pre class="brush: bash;">
+{% highlight bash %}
 > rails g active_admin:cms:page Page
-</pre>
+{% endhighlight %}
 
 This will create a new model, a migration to add the database table, add the ActiveAdmin definitions and create the views for editing the page.
 
@@ -24,9 +24,9 @@ Recipes represent the structure of the content to be stored in the CMS.  It is e
 
 A typical recipe might look something like this:
 
-<pre class="brush: ruby; gutter: false;">
+{% highlight ruby %}
 module Recipes
-  class Default &lt; Cms::Recipe
+  class Default < Cms::Recipe
     
     define do
       section :main_content do
@@ -43,15 +43,15 @@ module Recipes
 
   end
 end
-</pre>
+{% endhighlight %}
 
 So we are saying that pages using this recipe should have 2 sections of content.  In the main content area, there should be a title image, a short sub-heading and then a chunk of text which is the main copy for the page.  There is also a side bar that contaings 2 images.
 
 There is a generator to create a new recipe as well
 
-<pre class="brush: bash">
+{% highlight bash %}
 > rails g active_admin:cms:recipe MyNewRecipe
-</pre>
+{% endhighlight %}
 
 This will create a new recipe at app/models/recipes/my_new_recipe.rb
 

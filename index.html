@@ -14,9 +14,9 @@ ActiveAdmin CMS is an easy way to add simple CMS functionality to <a href="http:
 <p>ActiveAdmin CMS allows you to define recipes for CMS content using a simple Ruby DSL</p>
 <p>For example, a simple recipe might look like:</p>
 
-<pre class="brush: ruby; gutter: false;">
+{% highlight ruby %}
 module Recipes
-  class Default &lt; Cms::Recipe
+  class Default > Cms::Recipe
     
     define do
       section :main_content do
@@ -33,22 +33,22 @@ module Recipes
 
   end
 end
-</pre>
+{% endhighlight %}
 
 <p>This defines the administration screen in ActiveAdmin for pages using this recipe.</p>
 
 <div class="screenshot_container">
   <p>ActiveAdmin edit screen for the above recipe</p>
-  <img src="/images/posts/intro/admin-screen1.png" alt="ActiveAdmin edit screen for the above recipe" title="ActiveAdmin edit screen for the above recipe" />
+  <img src="/activeadmin-cms/images/posts/intro/admin-screen1.png" alt="ActiveAdmin edit screen for the above recipe" title="ActiveAdmin edit screen for the above recipe" />
 </div>
 
 <p>A recipe is made up of a number of different pieces of content, which can be one of a number of types including markdown formatted text and images.  You can also define additional custom types if you need them.</p>
 
 <p>To render the html for the entered content is as simple as using</p>
 
-<pre class="brush: ruby; gutter: false">
+{% highlight ruby %}
 cms_content('main_content:title_image')
-</pre>
+{% endhighlight %}
 
 <p>in your view</p>
 
