@@ -1,5 +1,3 @@
-SyntaxHighlighter.all();
-
 $(document).ready(function() {
 
   /*
