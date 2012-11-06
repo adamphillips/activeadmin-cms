@@ -14,12 +14,7 @@ layout: default
   <!-- <p class="tag"><a href="/docs">Docs</a></p> -->
   <p class="tag"><a href="http://github.com/adamphillips/activeadmin-cms" rel="external">Github</a></p>
 
-  <h3>Tags</h3>
-  {% for tag in site.tags %}
-  <p class="tag"><a href="/activeadmin-cms/tag/{{ tag | first }}">{{ tag | first }} ({{ tag | last | size }})</a></p>
-  {% endfor %}
-
-  <h3>Recently added</h3>
+  <h3>Tutorials</h3>
   {% for recpost in site.posts limit: 5 %}
   <p class="tag"><a href="/activeadmin-cms{{ recpost.url }}">{{ recpost.title }}</a></p>
   {% endfor %}
