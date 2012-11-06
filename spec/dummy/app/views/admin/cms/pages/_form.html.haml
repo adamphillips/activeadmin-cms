@@ -8,7 +8,7 @@
     =f.input :meta_title, :hint => 'This is the text that will appear in the title bar.  If you don\'t enter anything here, the page title entered above will be used'
     =f.input :meta_keywords, :hint => 'These are keywords that may be taken into account by search engines.  You should enter up to 5 words or phrases separated by commas'
     =f.input :meta_description, :as => :text, :hint => 'This is the description that will be shown by search engines'
-  =f.buttons
+  =f.actions
 
   -if @page.recipe
     =f.inputs 'Content' do
@@ -17,4 +17,4 @@
       -@page.recipe.sections.each do |s_id, s|
         = render :partial => 'admin/cms/pages/section', :locals => {:semantic_form => f, :section => s}
 
-    = f.buttons
+    = f.actions
