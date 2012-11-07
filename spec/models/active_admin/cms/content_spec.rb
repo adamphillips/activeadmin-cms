@@ -1,7 +1,21 @@
 require 'spec_helper'
 
 describe ActiveAdmin::Cms::Content do
- 
+
+  describe 'mass assignment' do
+    it 'should support mass-assignment of the public fields' do
+      @content = FactoryGirl.create(:content)
+
+      @content.update_attributes({
+        :page => FactoryGirl.create(:page),
+        :text => '123',
+        :key => 'xyz',
+        :image => 'img1',
+        :file => 'file1'
+      })
+    end
+  end
+
   describe '#text' do
     before :each do
       @content = FactoryGirl.create(:content)

@@ -9,6 +9,8 @@ module ActiveAdmin
         include ActsAsMarkup::ActiveRecordExtension::ClassMethods
       end
 
+      attr_accessible :page, :key, :text, :image, :file, :content_type_class
+
       self.table_name = 'content'
 
       belongs_to :page, :class_name => 'Cms::Page'
