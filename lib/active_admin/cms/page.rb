@@ -11,12 +11,17 @@ module ActiveAdmin
 
       class << self
 
+        # Returns the Page for the associated url
         def for_url(url)
           where(:url => url).first if where(:url => url).any?
         end
 
       end
 
+      # Return the content for the specified key on this page.
+      # Returns nil if the content key is not valid for the pages recipe.
+      # @example
+      #  @page.content_for 'left_column:supporting_text'
       def content_for content_key
         ret = nil
         if recipe
@@ -35,6 +40,7 @@ module ActiveAdmin
         return ret
       end
 
+      # Returns the html meta data for this page as a hash
       def meta_data
         data = {}
         if meta_title and !meta_title.blank?
@@ -63,6 +69,9 @@ module ActiveAdmin
         end
       end
 
+      # Sets the content for the specified key on this page
+      # @example
+      #  @page.set_content 'left_section:headline', 'Something Cool'
       def set_content content_key, content
         if content.kind_of? Cms::Content
           content.key = content_key

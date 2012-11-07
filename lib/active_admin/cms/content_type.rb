@@ -31,38 +31,47 @@ module ActiveAdmin
 
       class << self
 
+        # Whether this content type allows text
         def text_allowed?
           @text_allowed
         end
 
+        # Whether this content type supports markdown-formatted text
         def markdown_allowed?
           @markdown_allowed
         end
 
+        # Whether text is mandatory for this piece of content
         def text_required?
           @text_required
         end
-        
+
+        # Whether this content type allows an image to be uploaded
         def image_allowed?
           @image_allowed
         end
 
+        # Wether this content type requires an image
         def image_required?
           @image_required
         end
-        
+
+        # Whether this content type allows a file to be uploaded
         def file_allowed?
           @file_allowed
         end
 
+        # Wether this content type requires a file
         def file_required?
           @file_required
         end
-        
+
+        # The CarrierWave Uploader used by this content type for images
         def image_uploader
           ActiveAdmin::Cms::Uploaders::ContentImageUploader
         end
 
+        # Whether a preview should be displayed in ActiveAdmin
         def display_preview?
           @display_preview
         end
