@@ -11,7 +11,7 @@ describe ActiveAdmin::Cms::RecipeGenerator do
     run_generator
   end
 
-  specify do
+  it 'should create the correct files' do
     destination_root.should have_structure {
       no_file "test.rb"
       directory "app" do

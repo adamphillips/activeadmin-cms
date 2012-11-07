@@ -11,7 +11,7 @@ describe ActiveAdmin::Cms::InstallGenerator do
     run_generator
   end
 
-  specify do
+  it 'should create the correct files' do
     destination_root.should have_structure {
       directory "config" do
         directory "initializers" do
