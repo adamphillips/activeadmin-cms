@@ -1,8 +1,0 @@
-rvm 1.9.2@aac
-
-if [[ -s "/home/adamphillips/.rvm/environments/1.9.2@aac" ]] ; then
-  . "/home/adamphillips/.rvm/environments/1.9.2@aac"
-else
-  rvm --create use  "1.9.2@aac"
-fi
-
