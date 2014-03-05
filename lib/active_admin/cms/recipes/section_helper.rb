@@ -1,5 +1,5 @@
-require 'active_admin/cms/recipe/ingredient'
-require 'active_admin/cms/recipe/section'
+#require 'active_admin/cms/recipe/ingredient'
+#require 'active_admin/cms/recipe/section'
 
 module ActiveAdmin
   module Cms
@@ -7,8 +7,8 @@ module ActiveAdmin
       module SectionHelper
         module SectionContainer
 
-          class Ingredient < ActiveAdmin::Cms::Recipe::Ingredient; end
-          class Section < ActiveAdmin::Cms::Recipe::Section; end
+          #class Ingredient < ActiveAdmin::Cms::Recipe::Ingredient; end
+          #class Section < ActiveAdmin::Cms::Recipe::Section; end
 
           attr_accessor :parent
 
@@ -63,7 +63,7 @@ module ActiveAdmin
           
           def ingredient(ingredient_id, type, opts={})
             @ingredients ||= {}
-            @ingredients[ingredient_id] = Ingredient.new(ingredient_id, type, opts)
+            @ingredients[ingredient_id] = ActiveAdmin::Cms::Recipe::Ingredient.new(ingredient_id, type, opts)
             @ingredients[ingredient_id].section = self
             @ingredients[ingredient_id]
           end
@@ -74,7 +74,7 @@ module ActiveAdmin
 
           def section(section_id, opts={}, &block)
             
-            s = Section.new(section_id, opts, &block)
+            s = ActiveAdmin::Cms::Recipe::Section.new(section_id, opts, &block)
             @sections ||= {}
             @sections[section_id] = s
             s

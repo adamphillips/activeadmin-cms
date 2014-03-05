@@ -1,3 +1,5 @@
+require 'active_admin/cms/recipes/section_helper'
+
 module ActiveAdmin
   module Cms
     class Recipe
